@@ -421,7 +421,7 @@ constitute certification or attestation.
 ### Prerequisites
 
 ```powershell
-python -m pip install -r artefacts\08-infrastructure\requirements.txt   # openpyxl, PyYAML
+python -m pip install -r artefacts\08-infrastructure\requirements.txt   # PyYAML
 cd artefacts\06-source ; npm install                                    # docx
 ```
 
@@ -465,11 +465,7 @@ length. Current state: **PASS, 60 controls, 0 errors.**
 python artefacts\03-library\export_library.py
 ```
 
-### ⚠ Always recalculate after building
-
-`openpyxl` writes formulas but cannot evaluate them. A freshly built workbook
-has **no cached values**, so Excel shows correct numbers but most lightweight
-previewers, `pandas`, and any automated report generator show `None` or blank.
+### Always recalculate after building
 
 Open in Excel or LibreOffice and save once to cache the values:
 
