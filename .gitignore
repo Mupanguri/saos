@@ -1,0 +1,100 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# SAOS — things that must never be committed
+# ─────────────────────────────────────────────────────────────────────────────
+
+# 1. Pre-packaging source delivery.
+#    Superseded by artefacts/06-source/, which carries the same code with the
+#    --sample flag and redacted sample identity fields. Keep the originals
+#    locally as provenance; do not publish them.
+SAOS_Source_Library_v0.1/
+
+# 2. Pre-packaging deliverables as originally named.
+#    Superseded by artefacts/05-deliverables/, which are renamed to the naming
+#    convention. The original workbook filename asserted a provenance its
+#    contents did not support — see artefacts/07-reference/QA-FINDINGS.md F-01.
+#    Do NOT remove these lines to "fix" a missing file; the correct copies are
+#    already committed under artefacts/05-deliverables/.
+SAOS Assessment Workbook v0.1.xlsx
+SAOS Workbook v0.1 Client 1 retracted Data.xlsx
+SAOS Executive Report Template.docx
+
+# 3. Engagement output. Client data is confidential, per-client and
+#    retention-managed. It does not belong in version control at any point.
+#    Use a path outside the repository entirely.
+engagements/
+evidence/
+Evidence/
+*.xlsx.local
+SAOS-Assessment-Workbook-v0.1-*-FINAL.*
+SAOS-Assessment-Workbook-v0.1-*-DRAFT.*
+SAOS-Executive-Report-v0.1-*-FINAL.*
+SAOS-Executive-Report-v0.1-*-DRAFT.*
+
+# 4. Node. package.json and package-lock.json ARE committed (reproducible
+#    builds); node_modules never is.
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.npm/
+
+# 5. Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+env/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# 6. Editors and OS
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# 7. Local secrets and credentials. Never commit these, in any project.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+secrets/
+credentials.json
+service-account*.json
+.ghp*
+token*.txt
+
+# 8. Local artefacts and scratch
+*.log
+*.tmp
+*.bak
+*.orig
+~$*
+scratch/
+tmp/
+out/
+dist-out/
+.verification/
+coverage/
+*.tsv
+*.parquet
+
+# 9. OS credential stores
+*.kdbx
+*.kdb
+*.rdp

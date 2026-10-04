@@ -1,0 +1,16 @@
+# SAOS build dependencies
+#
+# Python (build/build_workbook.py, and the 03-library tooling):
+#     python -m pip install -r requirements.txt
+#     -> openpyxl, PyYAML
+#
+# Node (build/build_report.js):
+#     npm install          (run from the folder that contains package.json)
+#     -> docx
+#
+# Neither script needs a network connection at run time. Both are offline,
+# deterministic and produce byte-identical output for identical input, apart
+# from embedded build timestamps.
+
+openpyxl>=3.1,<4        # workbook generation: sheets, styles, data validation, charts
+PyYAML>=6.0,<7          # library parsing: library/meta.yaml + library/controls/*.yaml

@@ -1,0 +1,561 @@
+- id: SRV-BCK-01
+  name: Operationally critical servers are covered by a defined backup scope with RPO and RTO
+  plat: All
+  obj: Ensure critical data, configuration and system state can be recovered to agreed objectives.
+  biz: Unrecoverable data loss or prolonged outage is an existential risk for many organisations, particularly under ransomware.
+  thr: Permanent data loss and unrecoverable ransomware outage.
+  q: Are all servers holding operationally critical data or services included in a documented backup scope with defined recovery point and recovery time objectives?
+  type: Corrective
+  ev: Critical-system register with RPO/RTO; backup job list versus server inventory; backup success reports (30 days)
+  proc: |-
+    Reconcile backup console assets with the server inventory and business-critical list.
+    Check the last successful backup per server and the follow-up of failures.
+    Windows: `vssadmin list shadows`, `Get-WBSummary`. Linux: `systemctl list-timers | grep -i backup`.
+    Confirm system state and configuration are backed up, not just data.
+  test: DOC,TECH,AUTO
+  auto: High
+  autom: Backup platform API reconciled with CMDB; failure alerts to ticketing.
+  L: 3
+  I: 5
+  w: 3
+  m1: Backups are informal and incomplete.
+  m3: Documented scope with RPO/RTO and monitored backup jobs.
+  m5: Scope driven by business impact analysis, with automated coverage assurance.
+  rem: Define RPO/RTO from the business impact analysis, onboard all critical servers, and alert on missed or failed jobs.
+  iso: A.8.13, A.5.29, A.5.30
+  csf: PR.DS-11, ID.AM-05
+  cis: '11.1, 11.2'
+  soc: A1.2, CC9.1
+  att: 'IM:T1486, T1485, T1490'
+  zt: IN,DT
+  orig: '7.1'
+
+- id: SRV-BCK-02
+  name: System, application and data restoration procedures are documented and accessible
+  plat: All
+  obj: Ensure recovery can be executed under pressure by someone other than the original author.
+  biz: Slow or failed recovery extends outage costs; plans stored only on affected systems are unusable.
+  thr: Delayed or failed recovery during incidents.
+  q: Are system, application, configuration and data restoration procedures documented, current, available offline, and aligned to BCP and DR plans?
+  type: Corrective
+  ev: Restoration runbooks; DR plan; offline copy location; last review date; dependency map
+  proc: |-
+    Review runbooks for restoration order, credential escrow, licence keys and dependencies (DNS, AD, certificates).
+    Confirm copies are accessible without production services (offline or printed).
+    Ask an engineer to walk through a bare-metal restore of a critical server.
+  test: DOC,INT
+  auto: Low
+  autom: Runbook review reminders in the document system.
+  L: 3
+  I: 4
+  w: 2
+  m1: No documented recovery procedures.
+  m3: Documented runbooks reviewed annually and available offline.
+  m5: Runbooks tested in exercises and updated after every change or test.
+  rem: Write and test runbooks including dependencies, and keep an offline copy.
+  iso: A.5.30, A.5.29
+  csf: RC.RP-01
+  cis: '11.1'
+  soc: A1.3, CC9.1
+  att: 'IM:T1490'
+  zt: IN
+  orig: '7.1'
+
+- id: SRV-BCK-03
+  name: Backups are verified and restores are tested on a defined schedule
+  plat: All
+  obj: Prove that backups are usable and that recovery meets objectives.
+  biz: Untested backups frequently fail when needed; testing converts assumption into assurance.
+  thr: Silent backup failure or corruption discovered during a crisis.
+  q: Are backups integrity-verified and restore-tested at least monthly for critical systems and at least annually for full DR, with results recorded?
+  type: Detective
+  ev: Restore test reports; backup verification logs; DR exercise results with achieved RTO and RPO; remediation actions
+  proc: |-
+    Select 3 critical servers and obtain the latest restore-test evidence (date, scope, success, time versus RTO).
+    If none exists, perform a supervised test restore to an isolated network.
+    Review failures and corrective actions.
+  test: DOC,TECH,OBS
+  auto: Medium
+  autom: Backup platform automated recovery verification (for example sandbox restore testing).
+  L: 3
+  I: 5
+  w: 3
+  m1: Restores are never tested.
+  m3: Monthly verification and annual DR test with documented results.
+  m5: Automated recovery verification with measured RTO/RPO against targets.
+  rem: Schedule monthly verification and annual DR tests, record results, and fix failures.
+  iso: A.8.13, A.5.30
+  csf: PR.DS-11, RC.RP-03
+  cis: '11.5'
+  soc: A1.3, CC7.5
+  att: 'IM:T1490'
+  zt: IN
+  orig: '7.1'
+
+- id: SRV-BCK-04
+  name: An off-site and offline or immutable backup copy exists
+  plat: All
+  obj: Ensure at least one recovery copy survives site loss and attacker deletion.
+  biz: Ransomware operators target backups first; immutable and offline copies determine whether recovery is possible without paying.
+  thr: Ransomware encrypting or deleting online backups, and same-site disaster.
+  q: Does the backup strategy include at least one off-site copy and one offline or immutable copy protected from deletion by compromised administrator credentials?
+  type: Corrective
+  ev: Backup architecture diagram; immutability and retention-lock settings; off-site location contract; deletion-protection configuration
+  proc: |-
+    In a test scope, attempt deletion of a restore point using a production backup-admin account (expect denial).
+    Cloud checks: `aws s3api get-object-lock-configuration --bucket <bucket>`; Azure immutable storage policy; Veeam hardened repository settings.
+    Confirm geographic separation of the off-site copy.
+  test: CFG,TECH,OBS
+  auto: Medium
+  autom: Cloud storage policy queries; backup platform configuration export.
+  L: 4
+  I: 5
+  w: 3
+  m1: All backups are online in the same site.
+  m3: Off-site copy exists and a separate offline or immutable copy is maintained.
+  m5: Immutable, geographically separated copies with verified deletion protection and regular tests.
+  rem: Implement immutable or offline copies off-site and require dual authorisation for deletion.
+  iso: A.8.13, A.8.14
+  csf: PR.DS-11, PR.IR-03
+  cis: '11.3, 11.4'
+  soc: A1.2
+  att: 'IM:T1490, T1485'
+  zt: IN,DT
+  orig: '7.1'
+
+- id: SRV-BCK-05
+  name: Backups are encrypted in transit and at rest and media is handled securely
+  plat: All
+  obj: Protect confidentiality of backup data wherever it is stored or transmitted.
+  biz: Backups contain the full data set; their compromise is equivalent to a breach of the source systems.
+  thr: Theft or exposure of backup copies and interception in transit.
+  q: Are backups encrypted in transit and at rest, with keys managed separately from the backup data, and is backup media handled per a media security standard?
+  type: Preventive
+  ev: Backup job encryption settings; key management records; transport protocol configuration; media handling standard; courier and vault logs
+  proc: |-
+    Inspect job settings for encryption and TLS.
+    Confirm key escrow is separate from the backup server.
+    Sample tape or media chain-of-custody records.
+    Confirm via capture or scan that backup traffic is encrypted.
+  test: CFG,DOC,TECH
+  auto: Medium
+  autom: Backup platform configuration export; network protocol scan.
+  L: 3
+  I: 4
+  w: 2
+  m1: Backups are unencrypted and media handling is informal.
+  m3: Encryption enabled with documented key management and media standard.
+  m5: End-to-end encryption with HSM or KMS-managed keys and audited media handling.
+  rem: Enable backup encryption, separate key management, and adopt a media handling standard.
+  iso: A.8.24, A.8.13, A.7.10
+  csf: PR.DS-01, PR.DS-02
+  cis: '3.10, 3.11, 11.3'
+  soc: CC6.7
+  att: 'CO:T1005 | XF:T1048'
+  zt: DT
+  orig: '7.1'
+
+- id: SRV-BCK-06
+  name: Backup infrastructure and credentials are segregated from production administration
+  plat: All
+  obj: Prevent a single compromised administrator or domain from destroying both production and backups.
+  biz: Backup systems joined to the production domain are routinely compromised and wiped in ransomware attacks.
+  thr: Compromised domain administrator deleting production data and backups.
+  q: Are backup servers, consoles and credentials separated from production administration through separate identities, MFA, network isolation and restricted console access?
+  type: Preventive
+  ev: Backup server domain status; admin role assignments; MFA configuration; firewall rules; backup console audit logs
+  proc: |-
+    Windows: `(Get-CimInstance Win32_ComputerSystem).PartOfDomain` to determine whether the backup server is domain-joined.
+    Review membership of backup administrator groups and MFA on the console.
+    Check that deletion and retention-change actions are audited and alerted.
+  test: CFG,INT,TECH
+  auto: Medium
+  autom: Backup platform audit log export; AD group membership reports.
+  L: 4
+  I: 5
+  w: 3
+  m1: Backup servers are domain-joined and managed by domain administrators.
+  m3: Dedicated backup administrators with MFA and restricted network access.
+  m5: Isolated backup domain or workgroup, dual authorisation for destructive actions and alerts.
+  rem: Separate backup identities and network from production, require MFA, and alert on destructive actions.
+  iso: A.8.13, A.8.2, A.8.22
+  csf: PR.AA-05, PR.IR-01
+  cis: '5.4, 6.5, 11.3'
+  soc: CC6.1, CC6.3
+  att: 'IM:T1490 | PE:T1078'
+  zt: ID,IN
+  orig: New
+
+- id: SRV-DAT-01
+  name: Sensitive data on servers is encrypted at rest
+  plat: All
+  obj: Protect data on disks, volumes and databases from exposure through theft or improper access to storage.
+  biz: Encryption at rest limits the impact of lost drives, snapshots and storage-level access.
+  thr: Data exposure from stolen disks, backups and snapshots.
+  q: Is sensitive data encrypted at rest through full-disk, volume or database encryption, with keys protected and recoverable?
+  type: Preventive
+  ev: BitLocker or LUKS status; key escrow records (AD, Entra, KMS); database TDE settings; virtual disk encryption
+  proc: |-
+    Windows: `manage-bde -status` and `Get-BitLockerVolume`.
+    Linux: `lsblk -f` (look for crypto_LUKS) and `cryptsetup status <name>`.
+    SQL Server: `SELECT name,is_encrypted FROM sys.databases`.
+    Verify recovery key escrow and who can retrieve keys.
+  test: CFG,TECH,AUTO
+  auto: High
+  autom: BitLocker reports through Intune or MBAM; configuration management queries.
+  L: 3
+  I: 4
+  w: 2
+  m1: No encryption at rest.
+  m3: Encryption on servers holding sensitive data with escrowed keys.
+  m5: Encryption everywhere with managed rotation and monitoring of key access.
+  rem: Enable disk and database encryption, escrow recovery keys, and restrict retrieval.
+  iso: A.8.24
+  csf: PR.DS-01
+  cis: '3.11'
+  soc: CC6.1, CC6.7
+  att: 'CO:T1005'
+  zt: DT
+  orig: New
+
+- id: SRV-DAT-02
+  name: Server services use current TLS versions, strong ciphers and managed certificates
+  plat: All
+  obj: Ensure encrypted channels are actually strong and certificates are valid and managed.
+  biz: Weak protocols enable decryption and downgrade; expired certificates cause outages.
+  thr: Downgrade and adversary-in-the-middle attacks, weak cipher decryption, expired certificates.
+  q: Do services use TLS 1.2 or higher with strong cipher suites and valid, managed certificates, with SSLv3 and TLS 1.0/1.1 disabled?
+  type: Preventive
+  ev: TLS scan results; certificate inventory with expiry dates; SChannel or OpenSSL configuration; cryptographic standard
+  proc: |-
+    `nmap --script ssl-enum-ciphers -p 443,636,3389 <ip>` or `testssl.sh <host>:443`.
+    Windows: `Get-TlsCipherSuite` and the SCHANNEL registry keys under `HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols`.
+    Linux: `openssl ciphers -v`; certificate expiry via `openssl s_client -connect <host>:443 | openssl x509 -noout -dates`.
+  test: TECH,AUTO
+  auto: High
+  autom: testssl.sh or SSL Labs-style scanning; certificate lifecycle management tools.
+  L: 3
+  I: 4
+  w: 2
+  m1: Legacy protocols and unmanaged certificates.
+  m3: Cryptographic standard enforced on most services with certificate inventory.
+  m5: Automated crypto compliance scanning and certificate renewal.
+  rem: Disable legacy protocols and weak ciphers, inventory certificates, and automate renewal.
+  iso: A.8.24
+  csf: PR.DS-02
+  cis: '3.10'
+  soc: CC6.7
+  att: 'CA:T1557, T1040'
+  zt: DT,NW
+  orig: '12.2'
+  owasp: A02
+  asvs: V9
+
+- id: SRV-DAT-03
+  name: File systems enforce access control and permissions on sensitive data
+  plat: All
+  obj: Ensure storage uses file systems capable of enforcing permissions and that permissions are appropriate.
+  biz: Without enforceable permissions, any local or network user can read or alter sensitive data.
+  thr: Unauthorised data access or modification on file systems without permission enforcement.
+  q: Are non-removable media formatted with access-control-capable file systems (NTFS, ReFS, ext4/XFS with ACLs), with appropriate permissions and no FAT file systems for sensitive volumes?
+  type: Preventive
+  ev: File system listing; permission baselines; ACL exports for sensitive paths
+  proc: |-
+    Windows: `Get-Volume | select DriveLetter,FileSystem` and `icacls D:\Data`.
+    Linux: `lsblk -f`, `mount | grep -E "vfat|ntfs-3g"`, `getfacl -R /srv/data | head`, and `findmnt` to check nodev, nosuid and noexec options where appropriate.
+  test: CFG,TECH,AUTO
+  auto: High
+  autom: Configuration management file system and ACL reports.
+  L: 2
+  I: 4
+  w: 1
+  m1: Sensitive data on file systems without permission support.
+  m3: Access-control file systems with documented permission standards.
+  m5: Permissions baselined and monitored with automated drift detection.
+  rem: Migrate sensitive volumes to ACL-capable file systems and apply least-privilege permissions.
+  iso: A.8.3, A.5.15
+  csf: PR.AA-05, PR.DS-01
+  cis: '3.3'
+  soc: CC6.1, CC6.3
+  att: 'DE:T1222 | CO:T1005'
+  zt: DT
+  orig: '1.2'
+
+- id: SRV-GOV-01
+  name: Every server is registered in an authoritative inventory reconciled with discovery
+  plat: All
+  obj: Maintain an accurate record of all servers, their role, owner and lifecycle.
+  biz: Unknown servers are unpatched, unmonitored and unowned, and are favoured footholds for attackers.
+  thr: Shadow or forgotten servers.
+  q: Is every server registered in an authoritative inventory or CMDB (owner, role, OS, criticality, location, network address, lifecycle), and is it reconciled with network discovery?
+  type: Detective
+  ev: CMDB export; network discovery results; reconciliation report; registration procedure
+  proc: |-
+    Obtain discovery data (`nmap -sn <subnets>`, DHCP, DNS and ARP exports, hypervisor inventory, cloud APIs) and compare it with the CMDB.
+    Quantify unmatched hosts in both directions and check mandatory fields for completeness.
+  test: DOC,TECH,AUTO
+  auto: High
+  autom: Scheduled discovery reconciled with CMDB via API.
+  L: 3
+  I: 4
+  w: 3
+  m1: No reliable server inventory.
+  m3: Maintained CMDB with a registration step in provisioning.
+  m5: Automated discovery and reconciliation with exceptions closed within defined time.
+  rem: Make registration part of provisioning and reconcile discovery with the CMDB at least monthly.
+  iso: A.5.9
+  csf: ID.AM-01, ID.AM-02
+  cis: '1.1, 1.2'
+  soc: CC6.1
+  att: 'DI:T1018'
+  zt: IN
+  orig: '10.1'
+
+- id: SRV-GOV-02
+  name: Every server has accountable owners, a criticality rating and a data classification
+  plat: All
+  obj: Ensure clear accountability and risk-based treatment of each server.
+  biz: Unclear ownership delays response and leaves patching, backup and monitoring unprioritised.
+  thr: Unmanaged systems and misprioritised protection.
+  q: Does every server have a named business owner, system administrator and application administrator approved by management, with criticality and data classification recorded and responsibilities for server-standard compliance documented?
+  type: Preventive
+  ev: Owner and administrator register; management approval; criticality and classification ratings; RACI; list of applications with administrators
+  proc: |-
+    Sample 10 servers and verify named owners and administrators are current employees and approved.
+    Confirm criticality and classification drive patching, backup and monitoring tiers.
+    Verify application administrators are accountable for application-level compliance with the server standard.
+  test: DOC,INT
+  auto: Medium
+  autom: CMDB mandatory fields; HR-to-CMDB owner validation.
+  L: 3
+  I: 3
+  w: 2
+  m1: Ownership is unknown or informal.
+  m3: Named owners and administrators recorded with criticality.
+  m5: Automated owner validation and risk-based service tiers driving controls.
+  rem: Make owner, administrators, criticality and classification mandatory CMDB fields with periodic validation.
+  iso: A.5.2, A.5.9, A.5.12, A.5.13
+  csf: GV.RR-02, ID.AM-05
+  cis: '1.1, 3.2'
+  soc: CC1.3
+  att: N/A
+  zt: IN
+  orig: '8.1, 8.2'
+
+- id: SRV-GOV-03
+  name: A security review and risk assessment is completed before production and on significant change
+  plat: All
+  obj: Ensure risk is understood and formally accepted before a server enters service.
+  biz: Risk assessed after go-live is difficult to remediate and leaves leadership accepting unknown exposure.
+  thr: Unassessed systems deployed with unmanaged risk.
+  q: Is a security review and risk assessment completed for new servers and significant changes before production by an approved assessor, with residual risk accepted by the owner?
+  type: Preventive
+  ev: Risk assessment reports; reviewer qualification; risk acceptance forms; review schedule
+  proc: |-
+    Sample 5 new servers and verify the risk assessment date precedes go-live, the assessor, findings and the owner's risk acceptance.
+    Confirm re-assessment triggers and scheduled review dates exist.
+  test: DOC,INT
+  auto: Low
+  autom: Workflow gate in provisioning requiring an attached assessment ID.
+  L: 3
+  I: 4
+  w: 2
+  m1: No pre-production risk assessment.
+  m3: Standard assessment completed with owner acceptance for new servers.
+  m5: Threat-informed assessments integrated into provisioning with periodic reassessment.
+  rem: Introduce a mandatory pre-production risk assessment and risk acceptance step, and reassess on change.
+  iso: A.5.8, A.8.29
+  csf: ID.RA-05, ID.RA-06
+  cis: N/A
+  soc: CC3.2, CC8.1
+  att: N/A
+  zt: IN
+  orig: '9.1, 9.2'
+
+- id: SRV-GOV-04
+  name: Third-party system administration and hosting are governed through contracts and access controls
+  plat: All
+  obj: Manage risk introduced by vendors who administer, host or support servers.
+  biz: Third parties with privileged access are a leading supply-chain breach vector.
+  thr: Third-party compromise and unmanaged vendor access.
+  q: Are contracts for outsourced administration, hosting and support reviewed for security and risk clauses (access, audit rights, breach notification, subcontractors), and is third-party access controlled?
+  type: Preventive
+  ev: Contracts and security schedules; vendor risk assessments; third-party access list; SOC 2 or ISO reports; vendor remote-access logs
+  proc: |-
+    Sample 3 contracts for required clauses.
+    Review vendor accounts and remote access methods (MFA, session recording, time-bound access).
+    Obtain assurance reports and map complementary user entity controls to internal controls.
+  test: DOC,INT,TECH
+  auto: Low
+  autom: Vendor access reports from PAM; vendor risk platform integration.
+  L: 3
+  I: 4
+  w: 2
+  m1: Vendors have standing access with no security terms.
+  m3: Contracts include security clauses and vendor access is controlled.
+  m5: Continuous vendor monitoring, just-in-time recorded access, and annual assurance review.
+  rem: Add security clauses and audit rights, enforce MFA and recorded just-in-time vendor access, and review assurance reports.
+  iso: A.5.19, A.5.20, A.5.21, A.5.22
+  csf: GV.SC-05, GV.SC-06
+  cis: '15.1, 15.4'
+  soc: CC9.2
+  att: 'IA:T1195, T1199'
+  zt: IN,ID
+  orig: '9.5'
+
+- id: SRV-VIR-01
+  name: Virtualization management planes are isolated and hardened
+  plat: Hypervisor
+  obj: Protect the interfaces that control all hosted workloads.
+  biz: Compromise of vCenter, an ESXi host or a Hyper-V or Proxmox management interface gives control of every VM and datastore.
+  thr: Management-plane exploitation, including ESXi and vCenter ransomware campaigns.
+  q: Are hypervisor and management interfaces (vCenter, ESXi, Hyper-V Manager/SCVMM/WAC, Proxmox GUI/API) restricted to a management network, not internet-exposed, and secured with TLS and trusted certificates?
+  type: Preventive
+  ev: Management network design; firewall rules; external scan result; certificate inventory; access lists
+  proc: |-
+    Scan public ranges for 443, 902, 8006, 5985 and 22 and compare with documented exposure.
+    From a user VLAN test reachability of management addresses.
+    VMware: `Get-VMHost | Get-VMHostFirewallException | where Enabled`. Proxmox: `pve-firewall status` and `ss -tlnp | grep -E "8006|22"`. Hyper-V: `Get-NetFirewallRule -DisplayGroup "Hyper-V*" -Enabled True`.
+  test: CFG,TECH,PEN
+  auto: Medium
+  autom: External attack-surface scans; PowerCLI and PowerShell configuration reports.
+  L: 3
+  I: 5
+  w: 3
+  m1: Management interfaces reachable from the user network or internet.
+  m3: Dedicated management network with firewall restrictions.
+  m5: Management plane behind jump hosts with MFA, continuous exposure monitoring and CA-issued certificates.
+  rem: Isolate management interfaces on a restricted network and remove any internet exposure.
+  iso: A.8.20, A.8.22, A.8.9
+  csf: PR.IR-01
+  cis: '4.6, 12.2'
+  soc: CC6.6
+  att: 'IA:T1190 | LM:T1021 | IM:T1486'
+  zt: NW,IN
+  orig: New
+
+- id: SRV-VIR-02
+  name: Hypervisor administrative access uses central identity, MFA and least privilege
+  plat: Hypervisor
+  obj: Prevent unmanaged or shared privileged access to the virtualization layer.
+  biz: Local root accounts on hosts bypass SSO and MFA and are rarely monitored.
+  thr: Shared root credentials and bypass of central identity.
+  q: Is hypervisor and management access integrated with central identity, protected by MFA, role-based with least privilege, with local root or administrator accounts vaulted and lockdown mode or equivalent enforced?
+  type: Preventive
+  ev: vCenter SSO and identity source configuration; role and permission export; host lockdown settings; Proxmox realm and permission settings; Hyper-V administrators group membership
+  proc: |-
+    VMware: `Get-VMHost | select Name,@{N='Lockdown';E={$_.ExtensionData.Config.LockdownMode}}` and `Get-VIPermission | select Principal,Role,Entity`.
+    Hyper-V: `Get-LocalGroupMember "Hyper-V Administrators"`.
+    Proxmox: `pveum user list`, `pveum acl list`, and GUI Datacenter > Permissions > Two Factor.
+    Confirm the break-glass local account is vaulted and alerted.
+  test: CFG,TECH,AUTO
+  auto: High
+  autom: PowerCLI permission export; Proxmox API user and ACL export.
+  L: 4
+  I: 5
+  w: 3
+  m1: Shared root credentials used directly on hosts.
+  m3: Central identity with role-based access and vaulted local accounts.
+  m5: MFA, lockdown mode and just-in-time access with alerting on any local account use.
+  rem: Integrate with central identity, enable lockdown mode, enforce MFA and vault local accounts.
+  iso: A.8.2, A.8.5, A.5.15
+  csf: PR.AA-03, PR.AA-05
+  cis: '5.4, 6.5, 6.7'
+  soc: CC6.1, CC6.3
+  att: 'IA:T1078 | PE:T1078'
+  zt: ID,IN
+  orig: New
+
+- id: SRV-VIR-03
+  name: Virtual machines are built from hardened templates with controlled snapshots and devices
+  plat: Hypervisor
+  obj: Reduce guest attack surface and data exposure through VM configuration.
+  biz: Forgotten snapshots, attached media and unmanaged VMs create hidden data exposure and escape surfaces.
+  thr: VM escape, snapshot data exposure, rogue or unmanaged VMs.
+  q: Are VMs built from hardened templates with unnecessary virtual hardware removed, snapshots and checkpoints controlled, guest tools patched and VM escape surfaces minimised?
+  type: Preventive
+  ev: VM template hardening standard; snapshot inventory; VM hardware configuration; guest tools versions
+  proc: |-
+    VMware: `Get-VM | Get-Snapshot | select VM,Name,Created`, `Get-VM | Get-CDDrive | where {$_.IsoPath}`, and check isolation.tools settings against the VMware Security Configuration Guide.
+    Hyper-V: `Get-VMSnapshot -VMName *`, `Get-VMFirmware -VMName * | select VMName,SecureBoot`.
+    Proxmox: `qm list` and `qm config <vmid>` for unused USB, serial or CD devices.
+  test: CFG,TECH,AUTO
+  auto: Medium
+  autom: PowerCLI and PowerShell hardening audits.
+  L: 2
+  I: 4
+  w: 2
+  m1: VMs created ad hoc from arbitrary media.
+  m3: Hardened templates with snapshot lifecycle limits.
+  m5: Templates versioned as code with automated compliance and snapshot expiry.
+  rem: Standardise hardened VM templates, delete stale snapshots, and remove unused virtual devices.
+  iso: A.8.9, A.8.19
+  csf: PR.PS-01
+  cis: '4.1, 4.8'
+  soc: CC6.1, CC7.1
+  att: 'PE:T1611 | CO:T1005'
+  zt: IN,DV
+  orig: New
+
+- id: SRV-VIR-04
+  name: Virtual networks and storage access are segmented and restricted
+  plat: Hypervisor
+  obj: Prevent cross-VM and cross-zone access through virtual switching and storage networks.
+  biz: Flat virtual networks and open storage exports allow lateral movement and data theft below the guest OS.
+  thr: Sniffing, lateral movement across VMs, unauthorised storage mounts.
+  q: Are virtual switches, VLANs, storage networks (vMotion, iSCSI, NFS, replication) and management traffic segregated, with promiscuous mode, MAC changes and forged transmits restricted, and storage access controlled?
+  type: Preventive
+  ev: Virtual network diagram; vSwitch security policy; storage ACLs and LUN masking; NFS export lists; virtual firewall rules (NSX, Hyper-V extended ACLs, Proxmox SDN)
+  proc: |-
+    VMware: `Get-VirtualSwitch | Get-SecurityPolicy` and `Get-VirtualPortGroup | Get-SecurityPolicy` (AllowPromiscuous, MacChanges and ForgedTransmits should be Reject); confirm vMotion uses a dedicated VLAN.
+    Hyper-V: `Get-VMNetworkAdapter * | select VMName,SwitchName,MacAddressSpoofing`.
+    Proxmox: review `/etc/network/interfaces` and datacenter firewall rules.
+    Verify iSCSI CHAP and NFS export restrictions.
+  test: CFG,TECH
+  auto: Medium
+  autom: PowerCLI network policy exports; storage array configuration export.
+  L: 3
+  I: 4
+  w: 2
+  m1: A single flat virtual network for all traffic.
+  m3: Separate VLANs for management, storage and workloads with secure switch policies.
+  m5: Micro-segmentation with distributed firewalling and monitored policy changes.
+  rem: Separate management, storage and workload networks, set secure vSwitch policies, and restrict storage exports.
+  iso: A.8.20, A.8.22
+  csf: PR.IR-01
+  cis: '12.2, 13.4'
+  soc: CC6.6
+  att: 'LM:T1021 | CA:T1040'
+  zt: NW,IN
+  orig: New
+
+- id: SRV-VIR-05
+  name: Hypervisor logging and ransomware resilience controls are in place
+  plat: Hypervisor
+  obj: Detect hypervisor tampering and reduce the impact of hypervisor-targeting ransomware.
+  biz: Attackers encrypt datastores directly from the hypervisor, bypassing guest-level protections.
+  thr: Hypervisor-targeting ransomware and undetected host tampering.
+  q: Are hypervisor and management logs forwarded to the SIEM, shell and SSH services disabled by default, host configuration backed up, and ransomware protections (acceptance levels, execution restrictions, datastore snapshots and backups) in place?
+  type: Detective
+  ev: Syslog configuration; SIEM source health; ESXi service status; configuration backups; vendor hardening guide compliance
+  proc: |-
+    VMware: `Get-VMHost | Get-VMHostSysLogServer`; `Get-VMHost | Get-VMHostService | where {$_.Key -in 'TSM','TSM-SSH'} | select VMHost,Key,Running`; `esxcli software acceptance get`; `Get-AdvancedSetting -Entity (Get-VMHost) -Name UserVars.ESXiShellTimeOut`; host configuration backup with `vim-cmd hostsvc/firmware/backup_config`.
+    Hyper-V: confirm forwarding of Microsoft-Windows-Hyper-V-* event logs.
+    Proxmox: `journalctl -u pveproxy`, rsyslog forwarding and Proxmox Backup Server jobs.
+  test: CFG,TECH,AUTO
+  auto: Medium
+  autom: PowerCLI compliance scripts; SIEM source monitoring.
+  L: 3
+  I: 5
+  w: 3
+  m1: No hypervisor logging; SSH left enabled.
+  m3: Logs forwarded, SSH disabled by default, host configuration backed up.
+  m5: Detection use cases for hypervisor attacks, immutable datastore backups and tested recovery.
+  rem: Forward hypervisor logs, disable SSH and shell by default, back up host configuration, and test datastore recovery.
+  iso: A.8.15, A.8.16, A.8.13, A.8.9
+  csf: PR.PS-04, DE.CM-09, PR.DS-11
+  cis: '8.2, 8.9, 11.2'
+  soc: CC7.2, A1.2
+  att: 'IM:T1486 | DE:T1070 | EX:T1059'
+  zt: IN
+  orig: New

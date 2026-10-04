@@ -1,0 +1,14 @@
+﻿family_key,family_name,controls_built,default_references,iso_27001_management_system_clauses,iso_iec_27034_category
+SRV-PHY,Physical and Environmental Security,4,NIST SP 800-53 Rev.5 PE family; ISO/IEC 27002:2022 clause 7; NIST SP 800-88 Rev.1 (media sanitization); vendor hardware hardening guides,"6.1.3, 8.1",N/A
+SRV-CFG,Secure Configuration and Change,7,"CIS Benchmarks (Windows Server, RHEL, Ubuntu); Microsoft Security Baselines; DISA STIGs; NIST SP 800-123; NIST SP 800-70","6.1.3, 8.1",Runtime
+SRV-PAT,Patch and Lifecycle Management,5,NIST SP 800-40 Rev.4; CISA Known Exploited Vulnerabilities catalog; vendor lifecycle and support policies,"6.1.3, 8.1",Runtime
+SRV-LOG,Logging and Time Synchronization,6,NIST SP 800-92; CIS Control 8; Microsoft Windows auditing guidance; CISA/ASD logging best-practice guidance,"6.1.3, 8.1, 9.1",Runtime
+SRV-HST,Host Protection,4,CIS Controls 10 and 13; Microsoft Defender documentation; vendor EDR hardening guides,"6.1.3, 8.1",Runtime
+SRV-VUL,Vulnerability Assessment,4,NIST SP 800-115; NIST SP 800-40 Rev.4; CVSS specification (FIRST); EPSS; CISA KEV catalog,"6.1.2, 8.2, 9.1",Verification
+SRV-NET,Network Placement and Exposure,1,NIST SP 800-41 Rev.1; NIST SP 800-207; CIS Control 12,"6.1.3, 8.1",Runtime
+SRV-IAM,Authentication and Access Control,9,NIST SP 800-63B; NIST SP 800-53 Rev.5 AC and IA families; CIS Controls 5 and 6; Windows LAPS documentation,"6.1.3, 8.1",Runtime
+SRV-ADM,Secure Administration,2,NIST SP 800-53 Rev.5 AC-17; Microsoft privileged access (enterprise access model); CIS Controls 4 and 12,"6.1.3, 8.1",Runtime
+SRV-BCK,"Backup, Restore and Recovery",6,NIST SP 800-34 Rev.1; 3-2-1-1-0 backup practice; CIS Control 11,"6.1.3, 8.1",N/A
+SRV-DAT,Data Protection,3,NIST SP 800-111; NIST SP 800-52 Rev.2; CIS Control 3,"6.1.3, 8.1",Runtime
+SRV-GOV,"Governance, Ownership and Risk",4,ISO/IEC 27005; NIST SP 800-30 Rev.1; NIST SP 800-53 Rev.5 RA and SA families; ISO/IEC 27036 (supplier relationships),"5.3, 6.1.2, 8.2",N/A
+SRV-VIR,Virtualization Platforms,5,VMware vSphere Security Configuration Guide; Microsoft Hyper-V security documentation; CIS Benchmarks (VMware ESXi); Proxmox VE administration guide; NIST SP 800-125,"6.1.3, 8.1",Runtime

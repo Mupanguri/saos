@@ -1,0 +1,500 @@
+- id: SRV-VUL-01
+  name: Servers are hardened and vulnerability-assessed before entering production
+  plat: All
+  obj: Ensure no server goes live with known exploitable weaknesses or without a retained security baseline.
+  biz: Fixing issues before go-live is far cheaper than after exposure, and the baseline report supports later audits and investigations.
+  thr: Insecure systems exposed at go-live.
+  q: Is every new or rebuilt server configuration-reviewed and vulnerability-scanned before production, and are the baseline reports retained?
+  type: Preventive
+  ev: Go-live checklist; pre-production scan and baseline compliance report; sign-off record; retained report archive
+  proc: |-
+    Sample 5 servers deployed in the last 12 months and locate the pre-production scan report, the open findings by severity at go-live, and the approval of any residual risk.
+    For automated builds, confirm a scan gate exists in the pipeline.
+    Verify reports are retained and retrievable.
+  test: DOC,TECH
+  auto: High
+  autom: Pipeline gate calling a scanner API (Nessus, Qualys, Defender TVM, OpenVAS).
+  L: 3
+  I: 4
+  w: 2
+  m1: Servers go live without assessment.
+  m3: Pre-production checklist and scan completed with sign-off and retained reports.
+  m5: Automated pipeline gates block deployment on policy failure with exception workflow.
+  rem: Add a mandatory pre-production hardening and scanning gate with documented sign-off and report retention.
+  iso: A.8.29, A.8.8, A.8.9
+  csf: ID.RA-01, PR.PS-01
+  cis: '4.1, 7.5'
+  soc: CC7.1, CC8.1
+  att: 'IA:T1190'
+  zt: IN
+  orig: '5.1, 5.5'
+
+- id: SRV-VUL-02
+  name: Servers receive recurring credentialed vulnerability scans
+  plat: All
+  obj: Continuously identify missing patches and misconfigurations across all servers.
+  biz: Unauthenticated scans miss most local vulnerabilities; coverage gaps leave unknown risk.
+  thr: Unknown vulnerabilities and false negatives from unauthenticated scanning.
+  q: Are all servers scanned with credentialed scans at a defined frequency (at least monthly, weekly for internet-facing), and are coverage gaps tracked?
+  type: Detective
+  ev: Scan schedule; coverage report versus inventory; scan credential policy; last 3 scan results; authentication failure report
+  proc: |-
+    Export the scanner asset list and compare with the inventory (target coverage of 95% or better).
+    Check the authentication success rate per scan and the last-scanned date per server.
+    Confirm internet-facing assets are also scanned externally from an authorised host (`nmap -sV <public-ip>`).
+  test: DOC,TECH,AUTO
+  auto: High
+  autom: Scanner API coverage reports reconciled to CMDB.
+  L: 4
+  I: 4
+  w: 3
+  m1: No regular scanning.
+  m3: Scheduled credentialed scans with tracked coverage.
+  m5: Continuous assessment (agent-based) with near-complete coverage and exposure-aware prioritisation.
+  rem: Schedule credentialed scans for all servers, fix authentication failures, and scan internet-facing assets externally.
+  iso: A.8.8
+  csf: ID.RA-01
+  cis: '7.5, 7.6'
+  soc: CC7.1
+  att: 'IA:T1190 | DI:T1046'
+  zt: IN
+  orig: '5.2'
+
+- id: SRV-VUL-03
+  name: Vulnerability scanning is formally authorised and scanning tools are governed
+  plat: All
+  obj: Ensure scanning is permitted, unobstructed and performed only by approved people and tools.
+  biz: Blocked scanners create blind spots, while unmanaged scanners and their credentials are an attack path.
+  thr: Blind spots from blocked scanners, rogue scanning, scanner credential abuse.
+  q: Is scanning formally authorised, are approved scanners excluded from blocking without blanket whitelisting, and are only approved tools and operators used?
+  type: Preventive
+  ev: Scanning authorisation or rules of engagement; approved-tool list; scanner service-account permissions; security-tool allow-list rationale; authorised operator list
+  proc: |-
+    Review the authorisation and approved-tool list.
+    Confirm scanner IPs and service accounts are inventoried, least-privilege, vaulted and monitored, and that scanner subnets are not permanently exempt across the detection stack.
+    Hunt in the EDR for scanning tools (nmap, nessus) running outside approved hosts.
+  test: DOC,INT,CFG
+  auto: Low
+  autom: EDR hunting query for unapproved scanner binaries.
+  L: 2
+  I: 3
+  w: 1
+  m1: Scanning occurs ad hoc with no approval or governance.
+  m3: Authorised scanning with approved tools and operators.
+  m5: Vaulted scanner credentials with monitored use and annual authorisation review.
+  rem: Document scanning authorisation, vault scanner credentials, and review exemptions in security tooling.
+  iso: A.8.8, A.8.34
+  csf: ID.RA-01
+  cis: '7.5'
+  soc: CC7.1
+  att: 'CA:T1552 | DI:T1046'
+  zt: IN
+  orig: '5.3, 5.4, 5.7'
+
+- id: SRV-VUL-04
+  name: Vulnerabilities are prioritised by risk, remediated within timelines and verified by rescan
+  plat: All
+  obj: Reduce exploitable exposure through risk-based prioritisation and closed-loop remediation.
+  biz: CVSS alone misprioritises; combining exploitability, exposure and asset criticality focuses effort where breach likelihood is highest.
+  thr: Backlog of exploitable issues and false closure of findings.
+  q: Are vulnerabilities prioritised using severity, exploitability (CVSS, EPSS, KEV), asset criticality and exposure, with timelines enforced, exceptions approved and fixes verified by rescan?
+  type: Corrective
+  ev: Vulnerability management standard with timelines; aged vulnerability report; exception register; rescan evidence; time-to-remediate metrics
+  proc: |-
+    Export open vulnerabilities and calculate the percentage within timeline by severity.
+    Sample 10 closed items for rescan evidence and 5 exceptions for approval, compensating controls and expiry.
+    Where no CVSS exists, confirm the vulnerability is assessed for remote exploitability.
+  test: DOC,TECH,AUTO
+  auto: High
+  autom: Scanner and ticketing integration; KEV and EPSS enrichment.
+  L: 4
+  I: 4
+  w: 3
+  m1: Vulnerabilities are listed but not tracked to closure.
+  m3: Defined timelines, tracked remediation and approved exceptions.
+  m5: Risk-based prioritisation using threat data with measured, consistently met timelines and verified closure.
+  rem: Adopt risk-based timelines, enrich findings with KEV and EPSS, and require rescan validation before closure.
+  iso: A.8.8
+  csf: ID.RA-05, ID.RA-06
+  cis: '7.1, 7.2, 7.7'
+  soc: CC7.1, CC3.2
+  att: 'IA:T1190 | PE:T1068'
+  zt: IN
+  orig: '5.6'
+
+- id: SRV-NET-01
+  name: Servers are placed in segmented zones with documented and minimised network exposure
+  plat: All
+  obj: Restrict network reachability of servers to required flows and prevent unintended exposure.
+  biz: Flat networks turn a single compromised host into an enterprise-wide incident.
+  thr: Lateral movement across flat networks and internet exposure of management or database ports.
+  q: Are servers placed in zones appropriate to function and data sensitivity, with traffic limited to documented flows, no unintended internet exposure, and safeguards for specialised or shared computing (HPC, grid) environments?
+  type: Preventive
+  ev: Network diagrams; firewall rule exports for server zones; data-flow documentation; external attack-surface scan; segmentation test results; list of specialised-computing participants
+  proc: |-
+    Compare the server inventory with VLAN and zone assignment.
+    Run an authorised external scan (`nmap -Pn -sV -p- <public-ranges>`) and compare to documented exposure.
+    From a user VLAN test reachability to admin ports (`Test-NetConnection <ip> -Port 3389` or `nc -vz <ip> 22`; also 445, 5985, 5986).
+    Review firewall rules for any-any and unused entries, and confirm HPC or grid workloads have documented safeguards.
+  test: DOC,CFG,TECH,PEN
+  auto: Medium
+  autom: Firewall rule analysis tools (Tufin, AlgoSec, FireMon) or exported configuration parsing; external attack-surface management.
+  L: 3
+  I: 5
+  w: 3
+  m1: Flat network with servers and users together.
+  m3: Defined server zones with documented flows and firewall control.
+  m5: Micro-segmentation, continuous exposure monitoring and validated segmentation tests.
+  rem: Segment server zones, document flows, remove unused rules, and monitor external exposure continuously.
+  iso: A.8.20, A.8.21, A.8.22
+  csf: PR.IR-01, ID.AM-03
+  cis: '4.4, 12.2, 13.4'
+  soc: CC6.6
+  att: 'IA:T1190, T1133 | LM:T1021 | DI:T1046'
+  zt: NW,IN
+  orig: '1.3, 13.1'
+
+- id: SRV-IAM-01
+  name: Default accounts and credentials are changed, renamed or disabled
+  plat: All
+  obj: Eliminate publicly known credentials on operating systems, applications and appliances.
+  biz: Default credentials are trivially guessed and are tested first in nearly every attack.
+  thr: Credential guessing with documented vendor defaults.
+  q: Have all manufacturer and default accounts and passwords been changed, renamed or disabled on operating systems, applications, databases, BMCs and appliances?
+  type: Preventive
+  ev: Default-account review; account listings per system; default-credential scan results; BMC and appliance credential rotation records
+  proc: |-
+    Windows: `Get-LocalUser | select Name,Enabled,PasswordLastSet`; confirm the built-in Administrator is renamed, disabled or LAPS-managed and Guest is disabled.
+    Linux: `awk -F: '($2==""){print $1}' /etc/shadow` and `getent passwd | awk -F: '$3==0{print $1}'`; check default application accounts (tomcat, admin, postgres, sa).
+    Run an authorised default-password scan (for example Nessus default-password plugins).
+  test: CFG,TECH,AUTO
+  auto: High
+  autom: Credentialed scanner default-password checks; Ansible account audit.
+  L: 3
+  I: 5
+  w: 3
+  m1: Default credentials remain on some systems.
+  m3: Default accounts changed at build with a verified checklist.
+  m5: Automated detection of default credentials with rotation to a vault.
+  rem: Change or disable default credentials during build, and scan for them regularly.
+  iso: A.5.17, A.8.9
+  csf: PR.AA-01, PR.PS-01
+  cis: '4.7, 5.2'
+  soc: CC6.1
+  att: 'IA:T1078.001'
+  zt: ID
+  orig: '6.2'
+
+- id: SRV-IAM-02
+  name: Strong authentication is enforced for all administrative and root access
+  plat: All
+  obj: Protect administrative access with phishing-resistant or multi-factor authentication.
+  biz: Stolen or guessed administrator passwords give full control of the server and often the domain.
+  thr: Password theft, brute force and reuse against privileged accounts.
+  q: Is MFA or equivalent strong authentication (smart card, FIDO2, key-based SSH with passphrase) enforced for every administrator and root-level access?
+  type: Preventive
+  ev: PAM or jump host configuration; MFA and Conditional Access policy export; sshd configuration; admin accounts with authentication method; exception list
+  proc: |-
+    Windows: confirm admin RDP and console logon occurs through a PAW or jump host with MFA (Conditional Access, smart card or Windows Hello for Business); `Get-ADUser -Filter {SmartcardLogonRequired -eq $true}` for smart-card-enforced admins.
+    Linux: `sshd -T | egrep "passwordauthentication|permitrootlogin|pubkeyauthentication|authenticationmethods"` and `grep -E "pam_google_authenticator|pam_duo" /etc/pam.d/sshd`.
+    Compare the admin list with enforcement and attempt a password-only login (expect failure).
+  test: CFG,TECH,AUTO
+  auto: High
+  autom: Entra sign-in logs and Conditional Access reports; sshd -T compliance scan.
+  L: 4
+  I: 5
+  w: 3
+  m1: Passwords only for administrators.
+  m3: MFA enforced for administrators with documented exceptions.
+  m5: Phishing-resistant MFA everywhere with just-in-time elevation and no standing access.
+  rem: Enforce MFA via jump host or PAM, move SSH to keys or certificates, and remove password-only paths.
+  iso: A.8.5, A.8.2
+  csf: PR.AA-03
+  cis: '6.5'
+  soc: CC6.1
+  att: 'IA:T1078 | CA:T1110 | LM:T1021.001, T1021.004'
+  zt: ID
+  orig: '6.3'
+  owasp: A07
+
+- id: SRV-IAM-03
+  name: Access to the server, applications and data follows least privilege
+  plat: All
+  obj: Restrict access to authorised, authenticated users with only the rights they need.
+  biz: Excess privilege multiplies the damage of any single account compromise or insider misuse.
+  thr: Excess privilege enabling data theft, sabotage and privilege escalation.
+  q: Is access limited to authorised, authenticated users through role-based groups with least privilege, and without direct user permissions on resources?
+  type: Preventive
+  ev: Role and group matrix; local and domain group membership exports; ACL listings for key data; last access review
+  proc: |-
+    Windows: `Get-LocalGroupMember Administrators`, `Get-SmbShare | Get-SmbShareAccess`, `icacls <path>`; look for Everyone or Authenticated Users write access.
+    Linux: `getent group sudo wheel`, `find / -xdev -perm -0002 -type f 2>/dev/null | head`, `find / -xdev -perm -4000 -type f`.
+    Sample 10 users and compare their rights with job roles.
+  test: CFG,TECH,AUTO
+  auto: High
+  autom: AD and local group exports; access analytics tools; Ansible user audit.
+  L: 4
+  I: 4
+  w: 3
+  m1: Broad shared access with many administrators.
+  m3: Role-based groups and documented access matrix.
+  m5: Just-in-time elevation, automated entitlement analytics and periodic recertification.
+  rem: Move to role-based groups, remove direct and excessive permissions, and recertify access quarterly.
+  iso: A.5.15, A.5.18, A.8.2, A.8.3
+  csf: PR.AA-05
+  cis: '3.3, 5.4, 6.8'
+  soc: CC6.1, CC6.3
+  att: 'PE:T1078, T1548 | CO:T1005'
+  zt: ID,DT
+  orig: '6.4'
+  owasp: A01
+
+- id: SRV-IAM-04
+  name: Access is granted, changed and removed through a documented process with periodic review
+  plat: All
+  obj: Keep access aligned with current role and eliminate orphaned accounts.
+  biz: Leavers and movers retaining access are a major source of audit findings and insider breaches.
+  thr: Orphaned and over-provisioned access.
+  q: Is there a documented process to grant, change and remove server access (joiner, mover, leaver), with periodic recertification of privileged and sensitive access?
+  type: Preventive
+  ev: Access procedure; approved access request sample; leaver list versus server accounts; recertification records
+  proc: |-
+    Sample 10 leavers and 10 movers and verify revocation within the target time (for example 24 hours).
+    Compare the HR leaver list with server and AD accounts.
+    Windows: `Get-ADUser -Filter {Enabled -eq $true} -Properties LastLogonDate | where LastLogonDate -lt (Get-Date).AddDays(-90)`. Linux: `lastlog -b 90`.
+    Check the date and outcome of the last recertification.
+  test: DOC,INT,TECH
+  auto: High
+  autom: HR-to-IAM leaver reconciliation; dormant account reports.
+  L: 3
+  I: 4
+  w: 2
+  m1: Access removed only when someone remembers.
+  m3: Documented joiner/mover/leaver process with annual reviews.
+  m5: HR-driven automated provisioning and revocation with quarterly privileged recertification.
+  rem: Automate leaver revocation, disable dormant accounts, and recertify privileged access at least quarterly.
+  iso: A.5.16, A.5.18
+  csf: PR.AA-01, PR.AA-05
+  cis: '5.3, 6.1, 6.2'
+  soc: CC6.2, CC6.3
+  att: 'IA:T1078 | PS:T1136'
+  zt: ID
+  orig: '6.4'
+
+- id: SRV-IAM-05
+  name: Generic, shared and guest interactive accounts are disabled
+  plat: All
+  obj: Ensure every interactive session is attributable to one individual.
+  biz: Shared accounts remove accountability and are hard to revoke when staff leave.
+  thr: Loss of accountability and widely known shared credentials.
+  q: Are generic, shared and guest accounts that permit interactive logon disabled, with any exception approved, attributable and logged (service accounts excluded)?
+  type: Preventive
+  ev: Account inventory with type classification; exception approvals; PAM checkout logs
+  proc: |-
+    Windows: `Get-LocalUser Guest`; review interactive logon events (4624 logon types 2 and 10) for non-personal accounts.
+    Linux: `getent passwd` for UID 1000 and above and `last` for shared names.
+    Verify exceptions use PAM checkout with session recording.
+  test: CFG,TECH
+  auto: High
+  autom: Account inventory scripts with naming convention checks.
+  L: 3
+  I: 4
+  w: 2
+  m1: Shared admin accounts are common.
+  m3: Shared accounts disabled apart from approved, logged exceptions.
+  m5: No shared accounts; break-glass access vaulted, alerted and reviewed after use.
+  rem: Replace shared accounts with named accounts and vault break-glass credentials.
+  iso: A.5.16, A.5.17
+  csf: PR.AA-01
+  cis: '5.1, 5.2'
+  soc: CC6.1
+  att: 'IA:T1078'
+  zt: ID
+  orig: '6.4'
+
+- id: SRV-IAM-06
+  name: Trust relationships are identified, justified and reviewed
+  plat: All
+  obj: Know and control the implicit trust paths between systems and identities.
+  biz: Unreviewed trusts allow an attacker to move from a low-value system to critical ones.
+  thr: Lateral movement through unmonitored trust paths.
+  q: Are all trust relationships (domain and forest trusts, SSH key trust, delegation, database links, service-to-service trust) identified, justified and reviewed?
+  type: Preventive
+  ev: Trust inventory; AD trust export; authorized_keys inventory; delegation settings; review sign-off
+  proc: |-
+    AD: `Get-ADTrust -Filter * | select Name,Direction,TrustType,SIDFilteringQuarantined` and `Get-ADComputer -Filter {TrustedForDelegation -eq $true}`.
+    Linux: `find /home /root -name authorized_keys`, `cat /etc/hosts.equiv ~/.rhosts 2>/dev/null`, and review `/etc/sudoers.d`.
+    Validate business justification, SID filtering and key ownership.
+  test: DOC,CFG,TECH
+  auto: Medium
+  autom: AD trust and delegation reports; SSH key inventory scripts.
+  L: 3
+  I: 5
+  w: 2
+  m1: Trust relationships are unknown.
+  m3: Trusts documented and reviewed annually.
+  m5: Continuously monitored trust graph with automated alerts for new trusts and keys.
+  rem: Inventory trusts and delegation, remove unneeded ones, enable SID filtering, and review SSH keys.
+  iso: A.5.15, A.8.2, A.8.20
+  csf: PR.AA-05, ID.AM-03
+  cis: '6.8'
+  soc: CC6.1, CC6.3
+  att: 'IA:T1199 | LM:T1021, T1550'
+  zt: ID,NW
+  orig: '6.1'
+
+- id: SRV-IAM-07
+  name: Local administrator and root credentials are unique, rotated and vaulted
+  plat: All
+  obj: Stop credential reuse of local privileged accounts across servers.
+  biz: A shared local administrator password lets an attacker move across the whole estate from one stolen hash.
+  thr: Pass-the-hash and credential reuse.
+  q: Are local administrator and root credentials unique per server, automatically rotated and stored in a vault or LAPS, with access audited?
+  type: Preventive
+  ev: Windows LAPS policy; AD attribute permissions; PAM vault configuration; rotation logs
+  proc: |-
+    Windows: `Get-LapsADPassword -Identity <server>` (Windows LAPS) or check legacy attributes with `Get-ADComputer -Filter * -Properties ms-Mcs-AdmPwdExpirationTime`.
+    Review who can read the password attribute (ACL review).
+    Linux: confirm root password rotation through a vault, or that direct root login is disabled.
+  test: CFG,TECH,AUTO
+  auto: High
+  autom: LAPS coverage report; PAM vault API.
+  L: 4
+  I: 5
+  w: 3
+  m1: The same local administrator password is used on many servers.
+  m3: LAPS or vault deployed to most servers with controlled retrieval.
+  m5: Full coverage with rotation after use and alerts on retrieval.
+  rem: Deploy Windows LAPS or a PAM vault, restrict who can read passwords, and disable direct root logon.
+  iso: A.8.2, A.5.17
+  csf: PR.AA-01, PR.AA-05
+  cis: '5.2, 5.4'
+  soc: CC6.1, CC6.3
+  att: 'CA:T1003 | LM:T1550'
+  zt: ID
+  orig: New
+
+- id: SRV-IAM-08
+  name: Service accounts are inventoried, owned, least-privileged and protected
+  plat: All
+  obj: Control non-human identities that run services and scheduled jobs.
+  biz: Service accounts are frequently over-privileged and never rotated, making them prime targets.
+  thr: Kerberoasting, over-privileged service credentials, secret theft.
+  q: Are service accounts inventoried with owners, non-interactive, least-privileged, and using managed identities, gMSA or vaulted secrets with rotation?
+  type: Preventive
+  ev: Service account register; gMSA list; SPN review; password-age report; vault records
+  proc: |-
+    AD: `Get-ADServiceAccount -Filter *` and `Get-ADUser -Filter {ServicePrincipalName -like "*"} -Properties PasswordLastSet,ServicePrincipalName`.
+    Windows services: `Get-CimInstance Win32_Service | select Name,StartName`.
+    Linux: review systemd units for `User=root`; `getent passwd | awk -F: '$7!~/nologin|false/'`.
+    Verify interactive logon rights are denied and membership of privileged groups is justified.
+  test: CFG,TECH,AUTO
+  auto: High
+  autom: AD service account reports; PAM discovery.
+  L: 4
+  I: 4
+  w: 2
+  m1: Service accounts are unknown and use shared passwords.
+  m3: Register with owners and password rotation for critical accounts.
+  m5: Managed identities and gMSA throughout, with anomaly detection on service account use.
+  rem: Inventory service accounts, move to gMSA or managed identities, rotate secrets, and deny interactive logon.
+  iso: A.5.16, A.5.18, A.8.2
+  csf: PR.AA-01
+  cis: '5.2, 5.5'
+  soc: CC6.1, CC6.2
+  att: 'CA:T1558.003 | PE:T1078'
+  zt: ID
+  orig: New
+
+- id: SRV-IAM-09
+  name: Root login and privilege escalation on Linux are restricted and logged
+  plat: Linux
+  obj: Control how administrators gain root so that elevated actions are limited and attributable.
+  biz: Unrestricted sudo or direct root login removes accountability and eases privilege escalation.
+  thr: Privilege escalation through sudo misconfiguration and unaccountable root activity.
+  q: Is direct root login restricted, and is sudo or PAM-based escalation limited to required commands, logged and free of NOPASSWD ALL rules?
+  type: Preventive
+  ev: sudoers files; sshd configuration; PAM configuration; sudo logs
+  proc: |-
+    `sshd -T | grep permitrootlogin`, `grep -R "NOPASSWD\|ALL=(ALL" /etc/sudoers /etc/sudoers.d`, `visudo -c`.
+    Check sudo I/O logging with `grep -i "log_input\|log_output" /etc/sudoers*` and lockout with `grep pam_faillock /etc/pam.d/*`.
+    Windows analogue: `reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA`.
+  test: CFG,TECH,AUTO
+  auto: High
+  autom: OpenSCAP and Ansible audits of sudoers and sshd.
+  L: 3
+  I: 4
+  w: 2
+  m1: Direct root login and unrestricted sudo.
+  m3: Root login disabled and sudo restricted by role.
+  m5: Just-in-time privilege with session recording and command-level auditing.
+  rem: Disable direct root SSH, scope sudo rules, require authentication, and log all elevated commands.
+  iso: A.8.2, A.8.18
+  csf: PR.AA-05
+  cis: '5.4, 6.8'
+  soc: CC6.3
+  att: 'PE:T1548.003'
+  zt: ID
+  orig: New
+
+- id: SRV-ADM-01
+  name: Only secure protocols are used for administration and credential transmission
+  plat: All
+  obj: Protect administrative sessions and credentials from interception and downgrade.
+  biz: Cleartext or weak administrative protocols expose credentials to anyone on the network path.
+  thr: Credential interception, adversary-in-the-middle, protocol downgrade (telnet, FTP, SMBv1, NTLMv1, HTTP).
+  q: Are only encrypted, authenticated protocols used for administration (SSH, RDP with NLA/TLS, WinRM over HTTPS, HTTPS consoles), with legacy protocols disabled?
+  type: Preventive
+  ev: Protocol configuration; listening-service inventory; firewall rules for admin ports; scan results showing no cleartext admin protocols
+  proc: |-
+    Windows: RDP NLA via `(Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp").UserAuthentication`; `winrm enumerate winrm/config/listener`; `Get-SmbServerConfiguration | select RequireSecuritySignature,EnableSMB1Protocol`; LmCompatibilityLevel under `HKLM\SYSTEM\CurrentControlSet\Control\Lsa`.
+    Linux: `sshd -T | egrep "ciphers|macs|kexalgorithms"` and `ss -tlnp | egrep ":23 |:21 |:80 "`.
+    Authorised scan: `nmap -sV -p 21,23,80,445,3389,5985,5986 <ip>`.
+  test: CFG,TECH,AUTO
+  auto: High
+  autom: Nmap and credentialed scanner checks; OpenSCAP and CIS-CAT.
+  L: 3
+  I: 4
+  w: 3
+  m1: Cleartext and legacy protocols in use.
+  m3: Secure protocols mandated and legacy disabled on most servers.
+  m5: Enforced by baseline with continuous verification and alerts on cleartext admin traffic.
+  rem: Disable legacy protocols, require NLA/TLS and SSH with modern ciphers, and enforce SMB signing.
+  iso: A.8.5, A.8.21, A.8.24
+  csf: PR.DS-02, PR.AA-03
+  cis: '3.10, 4.6'
+  soc: CC6.1, CC6.7
+  att: 'CA:T1040, T1557 | LM:T1021'
+  zt: NW,ID
+  orig: '12.2'
+
+- id: SRV-ADM-02
+  name: Servers are administered only from hardened administrative workstations or jump hosts
+  plat: All
+  obj: Keep administrator credentials off general-purpose, internet-exposed workstations.
+  biz: Admin credentials typed on a compromised daily-use machine hand attackers the keys to the servers.
+  thr: Theft of administrator credentials from compromised workstations.
+  q: Are servers administered only from dedicated, hardened workstations or jump hosts that meet endpoint security requirements, with direct administration from standard workstations blocked?
+  type: Preventive
+  ev: PAW or bastion standard; firewall rules allowing admin protocols only from jump hosts; PAW compliance reports; session logs
+  proc: |-
+    Review firewall and host-firewall rules for source restrictions on 22, 3389, 5985 and 5986.
+    Attempt administrative logon from a standard workstation (expect failure).
+    Verify the PAW build baseline, no email or browsing, MFA and EDR, and sample session recordings.
+  test: CFG,TECH,OBS
+  auto: Medium
+  autom: Firewall rule analysis; PAW compliance via Intune or Defender.
+  L: 3
+  I: 5
+  w: 3
+  m1: Administration from any workstation.
+  m3: Jump hosts or PAWs required for administration of critical servers.
+  m5: Tiered administration with enforced PAWs, session recording and just-in-time access.
+  rem: Introduce a tiered admin model with PAWs or bastions and block admin protocols from other sources.
+  iso: A.8.2, A.8.20
+  csf: PR.AA-05, PR.IR-01
+  cis: '4.6, 12.8'
+  soc: CC6.1, CC6.6
+  att: 'CA:T1003 | LM:T1021 | PE:T1078'
+  zt: ID,DV,NW
+  orig: '12.1'

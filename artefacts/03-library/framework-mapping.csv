@@ -1,0 +1,489 @@
+﻿control_id,control_name,framework,mapping,mapping_level
+SRV-PHY-01,Physical access to servers is restricted and logged,ISO/IEC 27001:2022 Annex A,"A.7.1, A.7.2, A.7.4, A.7.6",control
+SRV-PHY-01,Physical access to servers is restricted and logged,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-PHY-01,Physical access to servers is restricted and logged,NIST CSF 2.0,PR.AA-06,control
+SRV-PHY-01,Physical access to servers is restricted and logged,SOC 2 (2017 TSC),CC6.4,control
+SRV-PHY-01,Physical access to servers is restricted and logged,MITRE ATT&CK,IA:T1200,control
+SRV-PHY-01,Physical access to servers is restricted and logged,NIST SP 800-53 / vendor,NIST SP 800-53 Rev.5 PE family; ISO/IEC 27002:2022 clause 7; NIST SP 800-88 Rev.1 (media sanitization); vendor hardware hardening guides,family
+SRV-PHY-01,Physical access to servers is restricted and logged,NIST SP 800-207 Zero Trust,IN,control
+SRV-PHY-02,Out-of-band management interfaces are isolated and hardened,ISO/IEC 27001:2022 Annex A,"A.8.9, A.8.20, A.8.22",control
+SRV-PHY-02,Out-of-band management interfaces are isolated and hardened,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-PHY-02,Out-of-band management interfaces are isolated and hardened,NIST CSF 2.0,"PR.IR-01, PR.PS-01",control
+SRV-PHY-02,Out-of-band management interfaces are isolated and hardened,CIS Controls v8.1,"4.6, 12.2",control
+SRV-PHY-02,Out-of-band management interfaces are isolated and hardened,SOC 2 (2017 TSC),"CC6.1, CC6.6",control
+SRV-PHY-02,Out-of-band management interfaces are isolated and hardened,MITRE ATT&CK,IA:T1190 | PS:T1542.001,control
+SRV-PHY-02,Out-of-band management interfaces are isolated and hardened,NIST SP 800-53 / vendor,NIST SP 800-53 Rev.5 PE family; ISO/IEC 27002:2022 clause 7; NIST SP 800-88 Rev.1 (media sanitization); vendor hardware hardening guides,family
+SRV-PHY-02,Out-of-band management interfaces are isolated and hardened,NIST SP 800-207 Zero Trust,"NW,IN",control
+SRV-PHY-03,Removable media and unused ports are controlled,ISO/IEC 27001:2022 Annex A,"A.7.10, A.8.9",control
+SRV-PHY-03,Removable media and unused ports are controlled,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-PHY-03,Removable media and unused ports are controlled,NIST CSF 2.0,PR.PS-01,control
+SRV-PHY-03,Removable media and unused ports are controlled,CIS Controls v8.1,"4.8, 10.3",control
+SRV-PHY-03,Removable media and unused ports are controlled,SOC 2 (2017 TSC),CC6.7,control
+SRV-PHY-03,Removable media and unused ports are controlled,MITRE ATT&CK,IA:T1091,control
+SRV-PHY-03,Removable media and unused ports are controlled,NIST SP 800-53 / vendor,NIST SP 800-53 Rev.5 PE family; ISO/IEC 27002:2022 clause 7; NIST SP 800-88 Rev.1 (media sanitization); vendor hardware hardening guides,family
+SRV-PHY-03,Removable media and unused ports are controlled,NIST SP 800-207 Zero Trust,IN,control
+SRV-PHY-04,Storage media is sanitised or destroyed before replacement and disposal,ISO/IEC 27001:2022 Annex A,"A.7.14, A.7.10, A.8.10",control
+SRV-PHY-04,Storage media is sanitised or destroyed before replacement and disposal,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-PHY-04,Storage media is sanitised or destroyed before replacement and disposal,NIST CSF 2.0,"ID.AM-08, PR.DS-01",control
+SRV-PHY-04,Storage media is sanitised or destroyed before replacement and disposal,CIS Controls v8.1,3.5,control
+SRV-PHY-04,Storage media is sanitised or destroyed before replacement and disposal,SOC 2 (2017 TSC),CC6.5,control
+SRV-PHY-04,Storage media is sanitised or destroyed before replacement and disposal,MITRE ATT&CK,CO:T1005,control
+SRV-PHY-04,Storage media is sanitised or destroyed before replacement and disposal,NIST SP 800-53 / vendor,NIST SP 800-53 Rev.5 PE family; ISO/IEC 27002:2022 clause 7; NIST SP 800-88 Rev.1 (media sanitization); vendor hardware hardening guides,family
+SRV-PHY-04,Storage media is sanitised or destroyed before replacement and disposal,NIST SP 800-207 Zero Trust,DT,control
+SRV-CFG-01,Secure configuration baselines are defined for every server platform,ISO/IEC 27001:2022 Annex A,A.8.9,control
+SRV-CFG-01,Secure configuration baselines are defined for every server platform,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-CFG-01,Secure configuration baselines are defined for every server platform,NIST CSF 2.0,PR.PS-01,control
+SRV-CFG-01,Secure configuration baselines are defined for every server platform,CIS Controls v8.1,4.1,control
+SRV-CFG-01,Secure configuration baselines are defined for every server platform,SOC 2 (2017 TSC),"CC5.2, CC7.1",control
+SRV-CFG-01,Secure configuration baselines are defined for every server platform,MITRE ATT&CK,IA:T1190 | EX:T1059 | DE:T1562,control
+SRV-CFG-01,Secure configuration baselines are defined for every server platform,NIST SP 800-53 / vendor,"CIS Benchmarks (Windows Server, RHEL, Ubuntu); Microsoft Security Baselines; DISA STIGs; NIST SP 800-123; NIST SP 800-70",family
+SRV-CFG-01,Secure configuration baselines are defined for every server platform,OWASP ASVS 4.0.3,V14,control
+SRV-CFG-01,Secure configuration baselines are defined for every server platform,OWASP Top 10:2021,A05,control
+SRV-CFG-01,Secure configuration baselines are defined for every server platform,NIST SP 800-207 Zero Trust,IN,control
+SRV-CFG-02,Configuration drift from the baseline is detected and corrected,ISO/IEC 27001:2022 Annex A,"A.8.9, A.8.16",control
+SRV-CFG-02,Configuration drift from the baseline is detected and corrected,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-CFG-02,Configuration drift from the baseline is detected and corrected,NIST CSF 2.0,"PR.PS-01, DE.CM-09",control
+SRV-CFG-02,Configuration drift from the baseline is detected and corrected,CIS Controls v8.1,4.1,control
+SRV-CFG-02,Configuration drift from the baseline is detected and corrected,SOC 2 (2017 TSC),CC7.1,control
+SRV-CFG-02,Configuration drift from the baseline is detected and corrected,MITRE ATT&CK,DE:T1562 | PS:T1543,control
+SRV-CFG-02,Configuration drift from the baseline is detected and corrected,NIST SP 800-53 / vendor,"CIS Benchmarks (Windows Server, RHEL, Ubuntu); Microsoft Security Baselines; DISA STIGs; NIST SP 800-123; NIST SP 800-70",family
+SRV-CFG-02,Configuration drift from the baseline is detected and corrected,NIST SP 800-207 Zero Trust,IN,control
+SRV-CFG-03,"Unnecessary services, roles, features and ports are disabled or removed",ISO/IEC 27001:2022 Annex A,"A.8.9, A.8.19",control
+SRV-CFG-03,"Unnecessary services, roles, features and ports are disabled or removed",ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-CFG-03,"Unnecessary services, roles, features and ports are disabled or removed",NIST CSF 2.0,PR.PS-01,control
+SRV-CFG-03,"Unnecessary services, roles, features and ports are disabled or removed",CIS Controls v8.1,4.8,control
+SRV-CFG-03,"Unnecessary services, roles, features and ports are disabled or removed",SOC 2 (2017 TSC),"CC6.1, CC6.6",control
+SRV-CFG-03,"Unnecessary services, roles, features and ports are disabled or removed",MITRE ATT&CK,IA:T1190 | LM:T1021,control
+SRV-CFG-03,"Unnecessary services, roles, features and ports are disabled or removed",NIST SP 800-53 / vendor,"CIS Benchmarks (Windows Server, RHEL, Ubuntu); Microsoft Security Baselines; DISA STIGs; NIST SP 800-123; NIST SP 800-70",family
+SRV-CFG-03,"Unnecessary services, roles, features and ports are disabled or removed",OWASP ASVS 4.0.3,V14,control
+SRV-CFG-03,"Unnecessary services, roles, features and ports are disabled or removed",OWASP Top 10:2021,A05,control
+SRV-CFG-03,"Unnecessary services, roles, features and ports are disabled or removed",NIST SP 800-207 Zero Trust,IN,control
+SRV-CFG-04,An approved authorised-use banner is displayed at login,ISO/IEC 27001:2022 Annex A,"A.5.10, A.8.5",control
+SRV-CFG-04,An approved authorised-use banner is displayed at login,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-CFG-04,An approved authorised-use banner is displayed at login,NIST CSF 2.0,GV.PO-01,control
+SRV-CFG-04,An approved authorised-use banner is displayed at login,SOC 2 (2017 TSC),CC6.1,control
+SRV-CFG-04,An approved authorised-use banner is displayed at login,NIST SP 800-53 / vendor,"CIS Benchmarks (Windows Server, RHEL, Ubuntu); Microsoft Security Baselines; DISA STIGs; NIST SP 800-123; NIST SP 800-70",family
+SRV-CFG-04,An approved authorised-use banner is displayed at login,NIST SP 800-207 Zero Trust,ID,control
+SRV-CFG-05,Boot chain integrity protections are enabled,ISO/IEC 27001:2022 Annex A,A.8.9,control
+SRV-CFG-05,Boot chain integrity protections are enabled,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-CFG-05,Boot chain integrity protections are enabled,NIST CSF 2.0,"PR.PS-01, PR.DS-06",control
+SRV-CFG-05,Boot chain integrity protections are enabled,CIS Controls v8.1,4.1,control
+SRV-CFG-05,Boot chain integrity protections are enabled,SOC 2 (2017 TSC),CC6.8,control
+SRV-CFG-05,Boot chain integrity protections are enabled,MITRE ATT&CK,PS:T1542 | DE:T1014,control
+SRV-CFG-05,Boot chain integrity protections are enabled,NIST SP 800-53 / vendor,"CIS Benchmarks (Windows Server, RHEL, Ubuntu); Microsoft Security Baselines; DISA STIGs; NIST SP 800-123; NIST SP 800-70",family
+SRV-CFG-05,Boot chain integrity protections are enabled,NIST SP 800-207 Zero Trust,"DV,IN",control
+SRV-CFG-06,Server configuration changes follow documented change control,ISO/IEC 27001:2022 Annex A,"A.8.32, A.8.9",control
+SRV-CFG-06,Server configuration changes follow documented change control,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-CFG-06,Server configuration changes follow documented change control,NIST CSF 2.0,PR.PS-01,control
+SRV-CFG-06,Server configuration changes follow documented change control,CIS Controls v8.1,4.1,control
+SRV-CFG-06,Server configuration changes follow documented change control,SOC 2 (2017 TSC),CC8.1,control
+SRV-CFG-06,Server configuration changes follow documented change control,MITRE ATT&CK,PS:T1543 | DE:T1562,control
+SRV-CFG-06,Server configuration changes follow documented change control,NIST SP 800-53 / vendor,"CIS Benchmarks (Windows Server, RHEL, Ubuntu); Microsoft Security Baselines; DISA STIGs; NIST SP 800-123; NIST SP 800-70",family
+SRV-CFG-06,Server configuration changes follow documented change control,NIST SP 800-207 Zero Trust,IN,control
+SRV-CFG-07,Only authorised software can execute or be installed on servers,ISO/IEC 27001:2022 Annex A,"A.8.19, A.8.7",control
+SRV-CFG-07,Only authorised software can execute or be installed on servers,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-CFG-07,Only authorised software can execute or be installed on servers,NIST CSF 2.0,PR.PS-05,control
+SRV-CFG-07,Only authorised software can execute or be installed on servers,CIS Controls v8.1,"2.3, 2.5",control
+SRV-CFG-07,Only authorised software can execute or be installed on servers,SOC 2 (2017 TSC),CC6.8,control
+SRV-CFG-07,Only authorised software can execute or be installed on servers,MITRE ATT&CK,EX:T1059 | DE:T1574 | IM:T1486,control
+SRV-CFG-07,Only authorised software can execute or be installed on servers,NIST SP 800-53 / vendor,"CIS Benchmarks (Windows Server, RHEL, Ubuntu); Microsoft Security Baselines; DISA STIGs; NIST SP 800-123; NIST SP 800-70",family
+SRV-CFG-07,Only authorised software can execute or be installed on servers,NIST SP 800-207 Zero Trust,"AP,IN",control
+SRV-PAT-01,A documented patch management process with risk-based timelines exists,ISO/IEC 27001:2022 Annex A,"A.8.8, A.5.37",control
+SRV-PAT-01,A documented patch management process with risk-based timelines exists,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-PAT-01,A documented patch management process with risk-based timelines exists,NIST CSF 2.0,"ID.RA-01, PR.PS-02",control
+SRV-PAT-01,A documented patch management process with risk-based timelines exists,CIS Controls v8.1,"7.3, 7.4",control
+SRV-PAT-01,A documented patch management process with risk-based timelines exists,SOC 2 (2017 TSC),CC7.1,control
+SRV-PAT-01,A documented patch management process with risk-based timelines exists,MITRE ATT&CK,IA:T1190 | PE:T1068 | IM:T1486,control
+SRV-PAT-01,A documented patch management process with risk-based timelines exists,NIST SP 800-53 / vendor,NIST SP 800-40 Rev.4; CISA Known Exploited Vulnerabilities catalog; vendor lifecycle and support policies,family
+SRV-PAT-01,A documented patch management process with risk-based timelines exists,OWASP Top 10:2021,A06,control
+SRV-PAT-01,A documented patch management process with risk-based timelines exists,NIST SP 800-207 Zero Trust,IN,control
+SRV-PAT-02,Patch currency is verified per server and installation failures are resolved,ISO/IEC 27001:2022 Annex A,A.8.8,control
+SRV-PAT-02,Patch currency is verified per server and installation failures are resolved,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-PAT-02,Patch currency is verified per server and installation failures are resolved,NIST CSF 2.0,"ID.RA-01, PR.PS-02",control
+SRV-PAT-02,Patch currency is verified per server and installation failures are resolved,CIS Controls v8.1,"7.3, 7.4, 7.7",control
+SRV-PAT-02,Patch currency is verified per server and installation failures are resolved,SOC 2 (2017 TSC),CC7.1,control
+SRV-PAT-02,Patch currency is verified per server and installation failures are resolved,MITRE ATT&CK,IA:T1190 | PE:T1068,control
+SRV-PAT-02,Patch currency is verified per server and installation failures are resolved,NIST SP 800-53 / vendor,NIST SP 800-40 Rev.4; CISA Known Exploited Vulnerabilities catalog; vendor lifecycle and support policies,family
+SRV-PAT-02,Patch currency is verified per server and installation failures are resolved,NIST SP 800-207 Zero Trust,IN,control
+SRV-PAT-03,Unsupported and end-of-life systems are governed through approved exceptions,ISO/IEC 27001:2022 Annex A,"A.8.8, A.5.9",control
+SRV-PAT-03,Unsupported and end-of-life systems are governed through approved exceptions,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-PAT-03,Unsupported and end-of-life systems are governed through approved exceptions,NIST CSF 2.0,"ID.AM-08, PR.PS-02",control
+SRV-PAT-03,Unsupported and end-of-life systems are governed through approved exceptions,CIS Controls v8.1,2.2,control
+SRV-PAT-03,Unsupported and end-of-life systems are governed through approved exceptions,SOC 2 (2017 TSC),CC7.1,control
+SRV-PAT-03,Unsupported and end-of-life systems are governed through approved exceptions,MITRE ATT&CK,IA:T1190 | PE:T1068 | LM:T1021,control
+SRV-PAT-03,Unsupported and end-of-life systems are governed through approved exceptions,NIST SP 800-53 / vendor,NIST SP 800-40 Rev.4; CISA Known Exploited Vulnerabilities catalog; vendor lifecycle and support policies,family
+SRV-PAT-03,Unsupported and end-of-life systems are governed through approved exceptions,OWASP Top 10:2021,A06,control
+SRV-PAT-03,Unsupported and end-of-life systems are governed through approved exceptions,NIST SP 800-207 Zero Trust,IN,control
+SRV-PAT-04,Emergency patching exists for actively exploited and critical vulnerabilities,ISO/IEC 27001:2022 Annex A,"A.8.8, A.5.7",control
+SRV-PAT-04,Emergency patching exists for actively exploited and critical vulnerabilities,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-PAT-04,Emergency patching exists for actively exploited and critical vulnerabilities,NIST CSF 2.0,"ID.RA-01, ID.RA-02",control
+SRV-PAT-04,Emergency patching exists for actively exploited and critical vulnerabilities,CIS Controls v8.1,7.7,control
+SRV-PAT-04,Emergency patching exists for actively exploited and critical vulnerabilities,SOC 2 (2017 TSC),CC7.1,control
+SRV-PAT-04,Emergency patching exists for actively exploited and critical vulnerabilities,MITRE ATT&CK,IA:T1190 | EX:T1059 | IM:T1486,control
+SRV-PAT-04,Emergency patching exists for actively exploited and critical vulnerabilities,NIST SP 800-53 / vendor,NIST SP 800-40 Rev.4; CISA Known Exploited Vulnerabilities catalog; vendor lifecycle and support policies,family
+SRV-PAT-04,Emergency patching exists for actively exploited and critical vulnerabilities,NIST SP 800-207 Zero Trust,IN,control
+SRV-PAT-05,Firmware and hypervisor layers are inventoried and patched,ISO/IEC 27001:2022 Annex A,"A.8.8, A.7.13",control
+SRV-PAT-05,Firmware and hypervisor layers are inventoried and patched,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-PAT-05,Firmware and hypervisor layers are inventoried and patched,NIST CSF 2.0,"PR.PS-02, PR.PS-03",control
+SRV-PAT-05,Firmware and hypervisor layers are inventoried and patched,CIS Controls v8.1,7.3,control
+SRV-PAT-05,Firmware and hypervisor layers are inventoried and patched,SOC 2 (2017 TSC),CC7.1,control
+SRV-PAT-05,Firmware and hypervisor layers are inventoried and patched,MITRE ATT&CK,PS:T1542.001 | PE:T1068,control
+SRV-PAT-05,Firmware and hypervisor layers are inventoried and patched,NIST SP 800-53 / vendor,NIST SP 800-40 Rev.4; CISA Known Exploited Vulnerabilities catalog; vendor lifecycle and support policies,family
+SRV-PAT-05,Firmware and hypervisor layers are inventoried and patched,NIST SP 800-207 Zero Trust,IN,control
+SRV-LOG-01,Security-relevant events are logged on every server,ISO/IEC 27001:2022 Annex A,"A.8.15, A.8.16",control
+SRV-LOG-01,Security-relevant events are logged on every server,ISO/IEC 27001:2022 management system,"6.1.3, 8.1, 9.1",family
+SRV-LOG-01,Security-relevant events are logged on every server,NIST CSF 2.0,"PR.PS-04, DE.CM-09",control
+SRV-LOG-01,Security-relevant events are logged on every server,CIS Controls v8.1,"8.2, 8.5",control
+SRV-LOG-01,Security-relevant events are logged on every server,SOC 2 (2017 TSC),CC7.2,control
+SRV-LOG-01,Security-relevant events are logged on every server,MITRE ATT&CK,"DE:T1562.002, T1070.001",control
+SRV-LOG-01,Security-relevant events are logged on every server,NIST SP 800-53 / vendor,NIST SP 800-92; CIS Control 8; Microsoft Windows auditing guidance; CISA/ASD logging best-practice guidance,family
+SRV-LOG-01,Security-relevant events are logged on every server,OWASP Top 10:2021,A09,control
+SRV-LOG-01,Security-relevant events are logged on every server,NIST SP 800-207 Zero Trust,IN,control
+SRV-LOG-02,Logs are forwarded in near real time to a central tamper-resistant store,ISO/IEC 27001:2022 Annex A,"A.8.15, A.8.16",control
+SRV-LOG-02,Logs are forwarded in near real time to a central tamper-resistant store,ISO/IEC 27001:2022 management system,"6.1.3, 8.1, 9.1",family
+SRV-LOG-02,Logs are forwarded in near real time to a central tamper-resistant store,NIST CSF 2.0,"PR.PS-04, DE.CM-09, DE.AE-02",control
+SRV-LOG-02,Logs are forwarded in near real time to a central tamper-resistant store,CIS Controls v8.1,"8.9, 13.1",control
+SRV-LOG-02,Logs are forwarded in near real time to a central tamper-resistant store,SOC 2 (2017 TSC),CC7.2,control
+SRV-LOG-02,Logs are forwarded in near real time to a central tamper-resistant store,MITRE ATT&CK,"DE:T1070.001, T1070.002, T1562.002",control
+SRV-LOG-02,Logs are forwarded in near real time to a central tamper-resistant store,NIST SP 800-53 / vendor,NIST SP 800-92; CIS Control 8; Microsoft Windows auditing guidance; CISA/ASD logging best-practice guidance,family
+SRV-LOG-02,Logs are forwarded in near real time to a central tamper-resistant store,OWASP Top 10:2021,A09,control
+SRV-LOG-02,Logs are forwarded in near real time to a central tamper-resistant store,NIST SP 800-207 Zero Trust,IN,control
+SRV-LOG-03,Log retention satisfies investigation and regulatory needs,ISO/IEC 27001:2022 Annex A,"A.8.15, A.5.33",control
+SRV-LOG-03,Log retention satisfies investigation and regulatory needs,ISO/IEC 27001:2022 management system,"6.1.3, 8.1, 9.1",family
+SRV-LOG-03,Log retention satisfies investigation and regulatory needs,NIST CSF 2.0,PR.PS-04,control
+SRV-LOG-03,Log retention satisfies investigation and regulatory needs,CIS Controls v8.1,"8.3, 8.10",control
+SRV-LOG-03,Log retention satisfies investigation and regulatory needs,SOC 2 (2017 TSC),CC7.2,control
+SRV-LOG-03,Log retention satisfies investigation and regulatory needs,MITRE ATT&CK,DE:T1070.001,control
+SRV-LOG-03,Log retention satisfies investigation and regulatory needs,NIST SP 800-53 / vendor,NIST SP 800-92; CIS Control 8; Microsoft Windows auditing guidance; CISA/ASD logging best-practice guidance,family
+SRV-LOG-03,Log retention satisfies investigation and regulatory needs,NIST SP 800-207 Zero Trust,IN,control
+SRV-LOG-04,Sensitive data is excluded from logs and log files are protected,ISO/IEC 27001:2022 Annex A,"A.8.15, A.5.34",control
+SRV-LOG-04,Sensitive data is excluded from logs and log files are protected,ISO/IEC 27001:2022 management system,"6.1.3, 8.1, 9.1",family
+SRV-LOG-04,Sensitive data is excluded from logs and log files are protected,NIST CSF 2.0,"PR.DS-01, PR.PS-04",control
+SRV-LOG-04,Sensitive data is excluded from logs and log files are protected,CIS Controls v8.1,3.3,control
+SRV-LOG-04,Sensitive data is excluded from logs and log files are protected,SOC 2 (2017 TSC),CC6.1,control
+SRV-LOG-04,Sensitive data is excluded from logs and log files are protected,MITRE ATT&CK,CA:T1552.001,control
+SRV-LOG-04,Sensitive data is excluded from logs and log files are protected,NIST SP 800-53 / vendor,NIST SP 800-92; CIS Control 8; Microsoft Windows auditing guidance; CISA/ASD logging best-practice guidance,family
+SRV-LOG-04,Sensitive data is excluded from logs and log files are protected,OWASP ASVS 4.0.3,V7,control
+SRV-LOG-04,Sensitive data is excluded from logs and log files are protected,NIST SP 800-207 Zero Trust,DT,control
+SRV-LOG-05,Log monitoring and alert triage run on a defined schedule and are reviewed for effectiveness,ISO/IEC 27001:2022 Annex A,"A.8.15, A.8.16",control
+SRV-LOG-05,Log monitoring and alert triage run on a defined schedule and are reviewed for effectiveness,ISO/IEC 27001:2022 management system,"6.1.3, 8.1, 9.1",family
+SRV-LOG-05,Log monitoring and alert triage run on a defined schedule and are reviewed for effectiveness,NIST CSF 2.0,"DE.CM-09, DE.AE-02, DE.AE-03",control
+SRV-LOG-05,Log monitoring and alert triage run on a defined schedule and are reviewed for effectiveness,CIS Controls v8.1,"8.11, 13.1",control
+SRV-LOG-05,Log monitoring and alert triage run on a defined schedule and are reviewed for effectiveness,SOC 2 (2017 TSC),"CC7.2, CC7.3",control
+SRV-LOG-05,Log monitoring and alert triage run on a defined schedule and are reviewed for effectiveness,MITRE ATT&CK,"DE:T1070, T1562",control
+SRV-LOG-05,Log monitoring and alert triage run on a defined schedule and are reviewed for effectiveness,NIST SP 800-53 / vendor,NIST SP 800-92; CIS Control 8; Microsoft Windows auditing guidance; CISA/ASD logging best-practice guidance,family
+SRV-LOG-05,Log monitoring and alert triage run on a defined schedule and are reviewed for effectiveness,OWASP Top 10:2021,A09,control
+SRV-LOG-05,Log monitoring and alert triage run on a defined schedule and are reviewed for effectiveness,NIST SP 800-207 Zero Trust,IN,control
+SRV-LOG-06,Servers use authoritative time and name-resolution sources,ISO/IEC 27001:2022 Annex A,A.8.17,control
+SRV-LOG-06,Servers use authoritative time and name-resolution sources,ISO/IEC 27001:2022 management system,"6.1.3, 8.1, 9.1",family
+SRV-LOG-06,Servers use authoritative time and name-resolution sources,NIST CSF 2.0,PR.PS-04,control
+SRV-LOG-06,Servers use authoritative time and name-resolution sources,CIS Controls v8.1,"4.9, 8.4",control
+SRV-LOG-06,Servers use authoritative time and name-resolution sources,SOC 2 (2017 TSC),CC7.2,control
+SRV-LOG-06,Servers use authoritative time and name-resolution sources,MITRE ATT&CK,CA:T1557,control
+SRV-LOG-06,Servers use authoritative time and name-resolution sources,NIST SP 800-53 / vendor,NIST SP 800-92; CIS Control 8; Microsoft Windows auditing guidance; CISA/ASD logging best-practice guidance,family
+SRV-LOG-06,Servers use authoritative time and name-resolution sources,NIST SP 800-207 Zero Trust,"IN,NW",control
+SRV-HST-01,"Anti-malware or EDR is deployed, current and tamper-protected on servers",ISO/IEC 27001:2022 Annex A,A.8.7,control
+SRV-HST-01,"Anti-malware or EDR is deployed, current and tamper-protected on servers",ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-HST-01,"Anti-malware or EDR is deployed, current and tamper-protected on servers",NIST CSF 2.0,"DE.CM-09, PR.PS-05",control
+SRV-HST-01,"Anti-malware or EDR is deployed, current and tamper-protected on servers",CIS Controls v8.1,"10.1, 10.2, 10.7",control
+SRV-HST-01,"Anti-malware or EDR is deployed, current and tamper-protected on servers",SOC 2 (2017 TSC),CC6.8,control
+SRV-HST-01,"Anti-malware or EDR is deployed, current and tamper-protected on servers",MITRE ATT&CK,EX:T1059 | DE:T1562.001 | IM:T1486,control
+SRV-HST-01,"Anti-malware or EDR is deployed, current and tamper-protected on servers",NIST SP 800-53 / vendor,CIS Controls 10 and 13; Microsoft Defender documentation; vendor EDR hardening guides,family
+SRV-HST-01,"Anti-malware or EDR is deployed, current and tamper-protected on servers",NIST SP 800-207 Zero Trust,"DV,IN",control
+SRV-HST-02,A host firewall enforces default-deny inbound rules,ISO/IEC 27001:2022 Annex A,"A.8.20, A.8.9",control
+SRV-HST-02,A host firewall enforces default-deny inbound rules,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-HST-02,A host firewall enforces default-deny inbound rules,NIST CSF 2.0,PR.IR-01,control
+SRV-HST-02,A host firewall enforces default-deny inbound rules,CIS Controls v8.1,4.4,control
+SRV-HST-02,A host firewall enforces default-deny inbound rules,SOC 2 (2017 TSC),CC6.6,control
+SRV-HST-02,A host firewall enforces default-deny inbound rules,MITRE ATT&CK,LM:T1021 | DI:T1046 | DE:T1562.004,control
+SRV-HST-02,A host firewall enforces default-deny inbound rules,NIST SP 800-53 / vendor,CIS Controls 10 and 13; Microsoft Defender documentation; vendor EDR hardening guides,family
+SRV-HST-02,A host firewall enforces default-deny inbound rules,NIST SP 800-207 Zero Trust,"NW,IN",control
+SRV-HST-03,Host intrusion prevention and exploit mitigations are enabled,ISO/IEC 27001:2022 Annex A,"A.8.7, A.8.9",control
+SRV-HST-03,Host intrusion prevention and exploit mitigations are enabled,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-HST-03,Host intrusion prevention and exploit mitigations are enabled,NIST CSF 2.0,"PR.PS-05, DE.CM-09",control
+SRV-HST-03,Host intrusion prevention and exploit mitigations are enabled,CIS Controls v8.1,"10.5, 13.7",control
+SRV-HST-03,Host intrusion prevention and exploit mitigations are enabled,SOC 2 (2017 TSC),"CC6.8, CC7.2",control
+SRV-HST-03,Host intrusion prevention and exploit mitigations are enabled,MITRE ATT&CK,PE:T1068 | EX:T1059,control
+SRV-HST-03,Host intrusion prevention and exploit mitigations are enabled,NIST SP 800-53 / vendor,CIS Controls 10 and 13; Microsoft Defender documentation; vendor EDR hardening guides,family
+SRV-HST-03,Host intrusion prevention and exploit mitigations are enabled,NIST SP 800-207 Zero Trust,IN,control
+SRV-HST-04,File and configuration integrity monitoring covers critical system paths,ISO/IEC 27001:2022 Annex A,"A.8.16, A.8.9",control
+SRV-HST-04,File and configuration integrity monitoring covers critical system paths,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-HST-04,File and configuration integrity monitoring covers critical system paths,NIST CSF 2.0,"PR.DS-06, DE.CM-09",control
+SRV-HST-04,File and configuration integrity monitoring covers critical system paths,CIS Controls v8.1,4.1,control
+SRV-HST-04,File and configuration integrity monitoring covers critical system paths,SOC 2 (2017 TSC),CC7.1,control
+SRV-HST-04,File and configuration integrity monitoring covers critical system paths,MITRE ATT&CK,"PS:T1505, T1547 | DE:T1014",control
+SRV-HST-04,File and configuration integrity monitoring covers critical system paths,NIST SP 800-53 / vendor,CIS Controls 10 and 13; Microsoft Defender documentation; vendor EDR hardening guides,family
+SRV-HST-04,File and configuration integrity monitoring covers critical system paths,NIST SP 800-207 Zero Trust,IN,control
+SRV-VUL-01,Servers are hardened and vulnerability-assessed before entering production,ISO/IEC 27001:2022 Annex A,"A.8.29, A.8.8, A.8.9",control
+SRV-VUL-01,Servers are hardened and vulnerability-assessed before entering production,ISO/IEC 27001:2022 management system,"6.1.2, 8.2, 9.1",family
+SRV-VUL-01,Servers are hardened and vulnerability-assessed before entering production,NIST CSF 2.0,"ID.RA-01, PR.PS-01",control
+SRV-VUL-01,Servers are hardened and vulnerability-assessed before entering production,CIS Controls v8.1,"4.1, 7.5",control
+SRV-VUL-01,Servers are hardened and vulnerability-assessed before entering production,SOC 2 (2017 TSC),"CC7.1, CC8.1",control
+SRV-VUL-01,Servers are hardened and vulnerability-assessed before entering production,MITRE ATT&CK,IA:T1190,control
+SRV-VUL-01,Servers are hardened and vulnerability-assessed before entering production,NIST SP 800-53 / vendor,NIST SP 800-115; NIST SP 800-40 Rev.4; CVSS specification (FIRST); EPSS; CISA KEV catalog,family
+SRV-VUL-01,Servers are hardened and vulnerability-assessed before entering production,NIST SP 800-207 Zero Trust,IN,control
+SRV-VUL-02,Servers receive recurring credentialed vulnerability scans,ISO/IEC 27001:2022 Annex A,A.8.8,control
+SRV-VUL-02,Servers receive recurring credentialed vulnerability scans,ISO/IEC 27001:2022 management system,"6.1.2, 8.2, 9.1",family
+SRV-VUL-02,Servers receive recurring credentialed vulnerability scans,NIST CSF 2.0,ID.RA-01,control
+SRV-VUL-02,Servers receive recurring credentialed vulnerability scans,CIS Controls v8.1,"7.5, 7.6",control
+SRV-VUL-02,Servers receive recurring credentialed vulnerability scans,SOC 2 (2017 TSC),CC7.1,control
+SRV-VUL-02,Servers receive recurring credentialed vulnerability scans,MITRE ATT&CK,IA:T1190 | DI:T1046,control
+SRV-VUL-02,Servers receive recurring credentialed vulnerability scans,NIST SP 800-53 / vendor,NIST SP 800-115; NIST SP 800-40 Rev.4; CVSS specification (FIRST); EPSS; CISA KEV catalog,family
+SRV-VUL-02,Servers receive recurring credentialed vulnerability scans,NIST SP 800-207 Zero Trust,IN,control
+SRV-VUL-03,Vulnerability scanning is formally authorised and scanning tools are governed,ISO/IEC 27001:2022 Annex A,"A.8.8, A.8.34",control
+SRV-VUL-03,Vulnerability scanning is formally authorised and scanning tools are governed,ISO/IEC 27001:2022 management system,"6.1.2, 8.2, 9.1",family
+SRV-VUL-03,Vulnerability scanning is formally authorised and scanning tools are governed,NIST CSF 2.0,ID.RA-01,control
+SRV-VUL-03,Vulnerability scanning is formally authorised and scanning tools are governed,CIS Controls v8.1,7.5,control
+SRV-VUL-03,Vulnerability scanning is formally authorised and scanning tools are governed,SOC 2 (2017 TSC),CC7.1,control
+SRV-VUL-03,Vulnerability scanning is formally authorised and scanning tools are governed,MITRE ATT&CK,CA:T1552 | DI:T1046,control
+SRV-VUL-03,Vulnerability scanning is formally authorised and scanning tools are governed,NIST SP 800-53 / vendor,NIST SP 800-115; NIST SP 800-40 Rev.4; CVSS specification (FIRST); EPSS; CISA KEV catalog,family
+SRV-VUL-03,Vulnerability scanning is formally authorised and scanning tools are governed,NIST SP 800-207 Zero Trust,IN,control
+SRV-VUL-04,"Vulnerabilities are prioritised by risk, remediated within timelines and verified by rescan",ISO/IEC 27001:2022 Annex A,A.8.8,control
+SRV-VUL-04,"Vulnerabilities are prioritised by risk, remediated within timelines and verified by rescan",ISO/IEC 27001:2022 management system,"6.1.2, 8.2, 9.1",family
+SRV-VUL-04,"Vulnerabilities are prioritised by risk, remediated within timelines and verified by rescan",NIST CSF 2.0,"ID.RA-05, ID.RA-06",control
+SRV-VUL-04,"Vulnerabilities are prioritised by risk, remediated within timelines and verified by rescan",CIS Controls v8.1,"7.1, 7.2, 7.7",control
+SRV-VUL-04,"Vulnerabilities are prioritised by risk, remediated within timelines and verified by rescan",SOC 2 (2017 TSC),"CC7.1, CC3.2",control
+SRV-VUL-04,"Vulnerabilities are prioritised by risk, remediated within timelines and verified by rescan",MITRE ATT&CK,IA:T1190 | PE:T1068,control
+SRV-VUL-04,"Vulnerabilities are prioritised by risk, remediated within timelines and verified by rescan",NIST SP 800-53 / vendor,NIST SP 800-115; NIST SP 800-40 Rev.4; CVSS specification (FIRST); EPSS; CISA KEV catalog,family
+SRV-VUL-04,"Vulnerabilities are prioritised by risk, remediated within timelines and verified by rescan",NIST SP 800-207 Zero Trust,IN,control
+SRV-NET-01,Servers are placed in segmented zones with documented and minimised network exposure,ISO/IEC 27001:2022 Annex A,"A.8.20, A.8.21, A.8.22",control
+SRV-NET-01,Servers are placed in segmented zones with documented and minimised network exposure,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-NET-01,Servers are placed in segmented zones with documented and minimised network exposure,NIST CSF 2.0,"PR.IR-01, ID.AM-03",control
+SRV-NET-01,Servers are placed in segmented zones with documented and minimised network exposure,CIS Controls v8.1,"4.4, 12.2, 13.4",control
+SRV-NET-01,Servers are placed in segmented zones with documented and minimised network exposure,SOC 2 (2017 TSC),CC6.6,control
+SRV-NET-01,Servers are placed in segmented zones with documented and minimised network exposure,MITRE ATT&CK,"IA:T1190, T1133 | LM:T1021 | DI:T1046",control
+SRV-NET-01,Servers are placed in segmented zones with documented and minimised network exposure,NIST SP 800-53 / vendor,NIST SP 800-41 Rev.1; NIST SP 800-207; CIS Control 12,family
+SRV-NET-01,Servers are placed in segmented zones with documented and minimised network exposure,NIST SP 800-207 Zero Trust,"NW,IN",control
+SRV-IAM-01,"Default accounts and credentials are changed, renamed or disabled",ISO/IEC 27001:2022 Annex A,"A.5.17, A.8.9",control
+SRV-IAM-01,"Default accounts and credentials are changed, renamed or disabled",ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-IAM-01,"Default accounts and credentials are changed, renamed or disabled",NIST CSF 2.0,"PR.AA-01, PR.PS-01",control
+SRV-IAM-01,"Default accounts and credentials are changed, renamed or disabled",CIS Controls v8.1,"4.7, 5.2",control
+SRV-IAM-01,"Default accounts and credentials are changed, renamed or disabled",SOC 2 (2017 TSC),CC6.1,control
+SRV-IAM-01,"Default accounts and credentials are changed, renamed or disabled",MITRE ATT&CK,IA:T1078.001,control
+SRV-IAM-01,"Default accounts and credentials are changed, renamed or disabled",NIST SP 800-53 / vendor,NIST SP 800-63B; NIST SP 800-53 Rev.5 AC and IA families; CIS Controls 5 and 6; Windows LAPS documentation,family
+SRV-IAM-01,"Default accounts and credentials are changed, renamed or disabled",NIST SP 800-207 Zero Trust,ID,control
+SRV-IAM-02,Strong authentication is enforced for all administrative and root access,ISO/IEC 27001:2022 Annex A,"A.8.5, A.8.2",control
+SRV-IAM-02,Strong authentication is enforced for all administrative and root access,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-IAM-02,Strong authentication is enforced for all administrative and root access,NIST CSF 2.0,PR.AA-03,control
+SRV-IAM-02,Strong authentication is enforced for all administrative and root access,CIS Controls v8.1,6.5,control
+SRV-IAM-02,Strong authentication is enforced for all administrative and root access,SOC 2 (2017 TSC),CC6.1,control
+SRV-IAM-02,Strong authentication is enforced for all administrative and root access,MITRE ATT&CK,"IA:T1078 | CA:T1110 | LM:T1021.001, T1021.004",control
+SRV-IAM-02,Strong authentication is enforced for all administrative and root access,NIST SP 800-53 / vendor,NIST SP 800-63B; NIST SP 800-53 Rev.5 AC and IA families; CIS Controls 5 and 6; Windows LAPS documentation,family
+SRV-IAM-02,Strong authentication is enforced for all administrative and root access,OWASP Top 10:2021,A07,control
+SRV-IAM-02,Strong authentication is enforced for all administrative and root access,NIST SP 800-207 Zero Trust,ID,control
+SRV-IAM-03,"Access to the server, applications and data follows least privilege",ISO/IEC 27001:2022 Annex A,"A.5.15, A.5.18, A.8.2, A.8.3",control
+SRV-IAM-03,"Access to the server, applications and data follows least privilege",ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-IAM-03,"Access to the server, applications and data follows least privilege",NIST CSF 2.0,PR.AA-05,control
+SRV-IAM-03,"Access to the server, applications and data follows least privilege",CIS Controls v8.1,"3.3, 5.4, 6.8",control
+SRV-IAM-03,"Access to the server, applications and data follows least privilege",SOC 2 (2017 TSC),"CC6.1, CC6.3",control
+SRV-IAM-03,"Access to the server, applications and data follows least privilege",MITRE ATT&CK,"PE:T1078, T1548 | CO:T1005",control
+SRV-IAM-03,"Access to the server, applications and data follows least privilege",NIST SP 800-53 / vendor,NIST SP 800-63B; NIST SP 800-53 Rev.5 AC and IA families; CIS Controls 5 and 6; Windows LAPS documentation,family
+SRV-IAM-03,"Access to the server, applications and data follows least privilege",OWASP Top 10:2021,A01,control
+SRV-IAM-03,"Access to the server, applications and data follows least privilege",NIST SP 800-207 Zero Trust,"ID,DT",control
+SRV-IAM-04,"Access is granted, changed and removed through a documented process with periodic review",ISO/IEC 27001:2022 Annex A,"A.5.16, A.5.18",control
+SRV-IAM-04,"Access is granted, changed and removed through a documented process with periodic review",ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-IAM-04,"Access is granted, changed and removed through a documented process with periodic review",NIST CSF 2.0,"PR.AA-01, PR.AA-05",control
+SRV-IAM-04,"Access is granted, changed and removed through a documented process with periodic review",CIS Controls v8.1,"5.3, 6.1, 6.2",control
+SRV-IAM-04,"Access is granted, changed and removed through a documented process with periodic review",SOC 2 (2017 TSC),"CC6.2, CC6.3",control
+SRV-IAM-04,"Access is granted, changed and removed through a documented process with periodic review",MITRE ATT&CK,IA:T1078 | PS:T1136,control
+SRV-IAM-04,"Access is granted, changed and removed through a documented process with periodic review",NIST SP 800-53 / vendor,NIST SP 800-63B; NIST SP 800-53 Rev.5 AC and IA families; CIS Controls 5 and 6; Windows LAPS documentation,family
+SRV-IAM-04,"Access is granted, changed and removed through a documented process with periodic review",NIST SP 800-207 Zero Trust,ID,control
+SRV-IAM-05,"Generic, shared and guest interactive accounts are disabled",ISO/IEC 27001:2022 Annex A,"A.5.16, A.5.17",control
+SRV-IAM-05,"Generic, shared and guest interactive accounts are disabled",ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-IAM-05,"Generic, shared and guest interactive accounts are disabled",NIST CSF 2.0,PR.AA-01,control
+SRV-IAM-05,"Generic, shared and guest interactive accounts are disabled",CIS Controls v8.1,"5.1, 5.2",control
+SRV-IAM-05,"Generic, shared and guest interactive accounts are disabled",SOC 2 (2017 TSC),CC6.1,control
+SRV-IAM-05,"Generic, shared and guest interactive accounts are disabled",MITRE ATT&CK,IA:T1078,control
+SRV-IAM-05,"Generic, shared and guest interactive accounts are disabled",NIST SP 800-53 / vendor,NIST SP 800-63B; NIST SP 800-53 Rev.5 AC and IA families; CIS Controls 5 and 6; Windows LAPS documentation,family
+SRV-IAM-05,"Generic, shared and guest interactive accounts are disabled",NIST SP 800-207 Zero Trust,ID,control
+SRV-IAM-06,"Trust relationships are identified, justified and reviewed",ISO/IEC 27001:2022 Annex A,"A.5.15, A.8.2, A.8.20",control
+SRV-IAM-06,"Trust relationships are identified, justified and reviewed",ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-IAM-06,"Trust relationships are identified, justified and reviewed",NIST CSF 2.0,"PR.AA-05, ID.AM-03",control
+SRV-IAM-06,"Trust relationships are identified, justified and reviewed",CIS Controls v8.1,6.8,control
+SRV-IAM-06,"Trust relationships are identified, justified and reviewed",SOC 2 (2017 TSC),"CC6.1, CC6.3",control
+SRV-IAM-06,"Trust relationships are identified, justified and reviewed",MITRE ATT&CK,"IA:T1199 | LM:T1021, T1550",control
+SRV-IAM-06,"Trust relationships are identified, justified and reviewed",NIST SP 800-53 / vendor,NIST SP 800-63B; NIST SP 800-53 Rev.5 AC and IA families; CIS Controls 5 and 6; Windows LAPS documentation,family
+SRV-IAM-06,"Trust relationships are identified, justified and reviewed",NIST SP 800-207 Zero Trust,"ID,NW",control
+SRV-IAM-07,"Local administrator and root credentials are unique, rotated and vaulted",ISO/IEC 27001:2022 Annex A,"A.8.2, A.5.17",control
+SRV-IAM-07,"Local administrator and root credentials are unique, rotated and vaulted",ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-IAM-07,"Local administrator and root credentials are unique, rotated and vaulted",NIST CSF 2.0,"PR.AA-01, PR.AA-05",control
+SRV-IAM-07,"Local administrator and root credentials are unique, rotated and vaulted",CIS Controls v8.1,"5.2, 5.4",control
+SRV-IAM-07,"Local administrator and root credentials are unique, rotated and vaulted",SOC 2 (2017 TSC),"CC6.1, CC6.3",control
+SRV-IAM-07,"Local administrator and root credentials are unique, rotated and vaulted",MITRE ATT&CK,CA:T1003 | LM:T1550,control
+SRV-IAM-07,"Local administrator and root credentials are unique, rotated and vaulted",NIST SP 800-53 / vendor,NIST SP 800-63B; NIST SP 800-53 Rev.5 AC and IA families; CIS Controls 5 and 6; Windows LAPS documentation,family
+SRV-IAM-07,"Local administrator and root credentials are unique, rotated and vaulted",NIST SP 800-207 Zero Trust,ID,control
+SRV-IAM-08,"Service accounts are inventoried, owned, least-privileged and protected",ISO/IEC 27001:2022 Annex A,"A.5.16, A.5.18, A.8.2",control
+SRV-IAM-08,"Service accounts are inventoried, owned, least-privileged and protected",ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-IAM-08,"Service accounts are inventoried, owned, least-privileged and protected",NIST CSF 2.0,PR.AA-01,control
+SRV-IAM-08,"Service accounts are inventoried, owned, least-privileged and protected",CIS Controls v8.1,"5.2, 5.5",control
+SRV-IAM-08,"Service accounts are inventoried, owned, least-privileged and protected",SOC 2 (2017 TSC),"CC6.1, CC6.2",control
+SRV-IAM-08,"Service accounts are inventoried, owned, least-privileged and protected",MITRE ATT&CK,CA:T1558.003 | PE:T1078,control
+SRV-IAM-08,"Service accounts are inventoried, owned, least-privileged and protected",NIST SP 800-53 / vendor,NIST SP 800-63B; NIST SP 800-53 Rev.5 AC and IA families; CIS Controls 5 and 6; Windows LAPS documentation,family
+SRV-IAM-08,"Service accounts are inventoried, owned, least-privileged and protected",NIST SP 800-207 Zero Trust,ID,control
+SRV-IAM-09,Root login and privilege escalation on Linux are restricted and logged,ISO/IEC 27001:2022 Annex A,"A.8.2, A.8.18",control
+SRV-IAM-09,Root login and privilege escalation on Linux are restricted and logged,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-IAM-09,Root login and privilege escalation on Linux are restricted and logged,NIST CSF 2.0,PR.AA-05,control
+SRV-IAM-09,Root login and privilege escalation on Linux are restricted and logged,CIS Controls v8.1,"5.4, 6.8",control
+SRV-IAM-09,Root login and privilege escalation on Linux are restricted and logged,SOC 2 (2017 TSC),CC6.3,control
+SRV-IAM-09,Root login and privilege escalation on Linux are restricted and logged,MITRE ATT&CK,PE:T1548.003,control
+SRV-IAM-09,Root login and privilege escalation on Linux are restricted and logged,NIST SP 800-53 / vendor,NIST SP 800-63B; NIST SP 800-53 Rev.5 AC and IA families; CIS Controls 5 and 6; Windows LAPS documentation,family
+SRV-IAM-09,Root login and privilege escalation on Linux are restricted and logged,NIST SP 800-207 Zero Trust,ID,control
+SRV-ADM-01,Only secure protocols are used for administration and credential transmission,ISO/IEC 27001:2022 Annex A,"A.8.5, A.8.21, A.8.24",control
+SRV-ADM-01,Only secure protocols are used for administration and credential transmission,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-ADM-01,Only secure protocols are used for administration and credential transmission,NIST CSF 2.0,"PR.DS-02, PR.AA-03",control
+SRV-ADM-01,Only secure protocols are used for administration and credential transmission,CIS Controls v8.1,"3.10, 4.6",control
+SRV-ADM-01,Only secure protocols are used for administration and credential transmission,SOC 2 (2017 TSC),"CC6.1, CC6.7",control
+SRV-ADM-01,Only secure protocols are used for administration and credential transmission,MITRE ATT&CK,"CA:T1040, T1557 | LM:T1021",control
+SRV-ADM-01,Only secure protocols are used for administration and credential transmission,NIST SP 800-53 / vendor,NIST SP 800-53 Rev.5 AC-17; Microsoft privileged access (enterprise access model); CIS Controls 4 and 12,family
+SRV-ADM-01,Only secure protocols are used for administration and credential transmission,NIST SP 800-207 Zero Trust,"NW,ID",control
+SRV-ADM-02,Servers are administered only from hardened administrative workstations or jump hosts,ISO/IEC 27001:2022 Annex A,"A.8.2, A.8.20",control
+SRV-ADM-02,Servers are administered only from hardened administrative workstations or jump hosts,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-ADM-02,Servers are administered only from hardened administrative workstations or jump hosts,NIST CSF 2.0,"PR.AA-05, PR.IR-01",control
+SRV-ADM-02,Servers are administered only from hardened administrative workstations or jump hosts,CIS Controls v8.1,"4.6, 12.8",control
+SRV-ADM-02,Servers are administered only from hardened administrative workstations or jump hosts,SOC 2 (2017 TSC),"CC6.1, CC6.6",control
+SRV-ADM-02,Servers are administered only from hardened administrative workstations or jump hosts,MITRE ATT&CK,CA:T1003 | LM:T1021 | PE:T1078,control
+SRV-ADM-02,Servers are administered only from hardened administrative workstations or jump hosts,NIST SP 800-53 / vendor,NIST SP 800-53 Rev.5 AC-17; Microsoft privileged access (enterprise access model); CIS Controls 4 and 12,family
+SRV-ADM-02,Servers are administered only from hardened administrative workstations or jump hosts,NIST SP 800-207 Zero Trust,"ID,DV,NW",control
+SRV-BCK-01,Operationally critical servers are covered by a defined backup scope with RPO and RTO,ISO/IEC 27001:2022 Annex A,"A.8.13, A.5.29, A.5.30",control
+SRV-BCK-01,Operationally critical servers are covered by a defined backup scope with RPO and RTO,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-BCK-01,Operationally critical servers are covered by a defined backup scope with RPO and RTO,NIST CSF 2.0,"PR.DS-11, ID.AM-05",control
+SRV-BCK-01,Operationally critical servers are covered by a defined backup scope with RPO and RTO,CIS Controls v8.1,"11.1, 11.2",control
+SRV-BCK-01,Operationally critical servers are covered by a defined backup scope with RPO and RTO,SOC 2 (2017 TSC),"A1.2, CC9.1",control
+SRV-BCK-01,Operationally critical servers are covered by a defined backup scope with RPO and RTO,MITRE ATT&CK,"IM:T1486, T1485, T1490",control
+SRV-BCK-01,Operationally critical servers are covered by a defined backup scope with RPO and RTO,NIST SP 800-53 / vendor,NIST SP 800-34 Rev.1; 3-2-1-1-0 backup practice; CIS Control 11,family
+SRV-BCK-01,Operationally critical servers are covered by a defined backup scope with RPO and RTO,NIST SP 800-207 Zero Trust,"IN,DT",control
+SRV-BCK-02,"System, application and data restoration procedures are documented and accessible",ISO/IEC 27001:2022 Annex A,"A.5.30, A.5.29",control
+SRV-BCK-02,"System, application and data restoration procedures are documented and accessible",ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-BCK-02,"System, application and data restoration procedures are documented and accessible",NIST CSF 2.0,RC.RP-01,control
+SRV-BCK-02,"System, application and data restoration procedures are documented and accessible",CIS Controls v8.1,11.1,control
+SRV-BCK-02,"System, application and data restoration procedures are documented and accessible",SOC 2 (2017 TSC),"A1.3, CC9.1",control
+SRV-BCK-02,"System, application and data restoration procedures are documented and accessible",MITRE ATT&CK,IM:T1490,control
+SRV-BCK-02,"System, application and data restoration procedures are documented and accessible",NIST SP 800-53 / vendor,NIST SP 800-34 Rev.1; 3-2-1-1-0 backup practice; CIS Control 11,family
+SRV-BCK-02,"System, application and data restoration procedures are documented and accessible",NIST SP 800-207 Zero Trust,IN,control
+SRV-BCK-03,Backups are verified and restores are tested on a defined schedule,ISO/IEC 27001:2022 Annex A,"A.8.13, A.5.30",control
+SRV-BCK-03,Backups are verified and restores are tested on a defined schedule,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-BCK-03,Backups are verified and restores are tested on a defined schedule,NIST CSF 2.0,"PR.DS-11, RC.RP-03",control
+SRV-BCK-03,Backups are verified and restores are tested on a defined schedule,CIS Controls v8.1,11.5,control
+SRV-BCK-03,Backups are verified and restores are tested on a defined schedule,SOC 2 (2017 TSC),"A1.3, CC7.5",control
+SRV-BCK-03,Backups are verified and restores are tested on a defined schedule,MITRE ATT&CK,IM:T1490,control
+SRV-BCK-03,Backups are verified and restores are tested on a defined schedule,NIST SP 800-53 / vendor,NIST SP 800-34 Rev.1; 3-2-1-1-0 backup practice; CIS Control 11,family
+SRV-BCK-03,Backups are verified and restores are tested on a defined schedule,NIST SP 800-207 Zero Trust,IN,control
+SRV-BCK-04,An off-site and offline or immutable backup copy exists,ISO/IEC 27001:2022 Annex A,"A.8.13, A.8.14",control
+SRV-BCK-04,An off-site and offline or immutable backup copy exists,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-BCK-04,An off-site and offline or immutable backup copy exists,NIST CSF 2.0,"PR.DS-11, PR.IR-03",control
+SRV-BCK-04,An off-site and offline or immutable backup copy exists,CIS Controls v8.1,"11.3, 11.4",control
+SRV-BCK-04,An off-site and offline or immutable backup copy exists,SOC 2 (2017 TSC),A1.2,control
+SRV-BCK-04,An off-site and offline or immutable backup copy exists,MITRE ATT&CK,"IM:T1490, T1485",control
+SRV-BCK-04,An off-site and offline or immutable backup copy exists,NIST SP 800-53 / vendor,NIST SP 800-34 Rev.1; 3-2-1-1-0 backup practice; CIS Control 11,family
+SRV-BCK-04,An off-site and offline or immutable backup copy exists,NIST SP 800-207 Zero Trust,"IN,DT",control
+SRV-BCK-05,Backups are encrypted in transit and at rest and media is handled securely,ISO/IEC 27001:2022 Annex A,"A.8.24, A.8.13, A.7.10",control
+SRV-BCK-05,Backups are encrypted in transit and at rest and media is handled securely,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-BCK-05,Backups are encrypted in transit and at rest and media is handled securely,NIST CSF 2.0,"PR.DS-01, PR.DS-02",control
+SRV-BCK-05,Backups are encrypted in transit and at rest and media is handled securely,CIS Controls v8.1,"3.10, 3.11, 11.3",control
+SRV-BCK-05,Backups are encrypted in transit and at rest and media is handled securely,SOC 2 (2017 TSC),CC6.7,control
+SRV-BCK-05,Backups are encrypted in transit and at rest and media is handled securely,MITRE ATT&CK,CO:T1005 | XF:T1048,control
+SRV-BCK-05,Backups are encrypted in transit and at rest and media is handled securely,NIST SP 800-53 / vendor,NIST SP 800-34 Rev.1; 3-2-1-1-0 backup practice; CIS Control 11,family
+SRV-BCK-05,Backups are encrypted in transit and at rest and media is handled securely,NIST SP 800-207 Zero Trust,DT,control
+SRV-BCK-06,Backup infrastructure and credentials are segregated from production administration,ISO/IEC 27001:2022 Annex A,"A.8.13, A.8.2, A.8.22",control
+SRV-BCK-06,Backup infrastructure and credentials are segregated from production administration,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-BCK-06,Backup infrastructure and credentials are segregated from production administration,NIST CSF 2.0,"PR.AA-05, PR.IR-01",control
+SRV-BCK-06,Backup infrastructure and credentials are segregated from production administration,CIS Controls v8.1,"5.4, 6.5, 11.3",control
+SRV-BCK-06,Backup infrastructure and credentials are segregated from production administration,SOC 2 (2017 TSC),"CC6.1, CC6.3",control
+SRV-BCK-06,Backup infrastructure and credentials are segregated from production administration,MITRE ATT&CK,IM:T1490 | PE:T1078,control
+SRV-BCK-06,Backup infrastructure and credentials are segregated from production administration,NIST SP 800-53 / vendor,NIST SP 800-34 Rev.1; 3-2-1-1-0 backup practice; CIS Control 11,family
+SRV-BCK-06,Backup infrastructure and credentials are segregated from production administration,NIST SP 800-207 Zero Trust,"ID,IN",control
+SRV-DAT-01,Sensitive data on servers is encrypted at rest,ISO/IEC 27001:2022 Annex A,A.8.24,control
+SRV-DAT-01,Sensitive data on servers is encrypted at rest,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-DAT-01,Sensitive data on servers is encrypted at rest,NIST CSF 2.0,PR.DS-01,control
+SRV-DAT-01,Sensitive data on servers is encrypted at rest,CIS Controls v8.1,3.11,control
+SRV-DAT-01,Sensitive data on servers is encrypted at rest,SOC 2 (2017 TSC),"CC6.1, CC6.7",control
+SRV-DAT-01,Sensitive data on servers is encrypted at rest,MITRE ATT&CK,CO:T1005,control
+SRV-DAT-01,Sensitive data on servers is encrypted at rest,NIST SP 800-53 / vendor,NIST SP 800-111; NIST SP 800-52 Rev.2; CIS Control 3,family
+SRV-DAT-01,Sensitive data on servers is encrypted at rest,NIST SP 800-207 Zero Trust,DT,control
+SRV-DAT-02,"Server services use current TLS versions, strong ciphers and managed certificates",ISO/IEC 27001:2022 Annex A,A.8.24,control
+SRV-DAT-02,"Server services use current TLS versions, strong ciphers and managed certificates",ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-DAT-02,"Server services use current TLS versions, strong ciphers and managed certificates",NIST CSF 2.0,PR.DS-02,control
+SRV-DAT-02,"Server services use current TLS versions, strong ciphers and managed certificates",CIS Controls v8.1,3.10,control
+SRV-DAT-02,"Server services use current TLS versions, strong ciphers and managed certificates",SOC 2 (2017 TSC),CC6.7,control
+SRV-DAT-02,"Server services use current TLS versions, strong ciphers and managed certificates",MITRE ATT&CK,"CA:T1557, T1040",control
+SRV-DAT-02,"Server services use current TLS versions, strong ciphers and managed certificates",NIST SP 800-53 / vendor,NIST SP 800-111; NIST SP 800-52 Rev.2; CIS Control 3,family
+SRV-DAT-02,"Server services use current TLS versions, strong ciphers and managed certificates",OWASP ASVS 4.0.3,V9,control
+SRV-DAT-02,"Server services use current TLS versions, strong ciphers and managed certificates",OWASP Top 10:2021,A02,control
+SRV-DAT-02,"Server services use current TLS versions, strong ciphers and managed certificates",NIST SP 800-207 Zero Trust,"DT,NW",control
+SRV-DAT-03,File systems enforce access control and permissions on sensitive data,ISO/IEC 27001:2022 Annex A,"A.8.3, A.5.15",control
+SRV-DAT-03,File systems enforce access control and permissions on sensitive data,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-DAT-03,File systems enforce access control and permissions on sensitive data,NIST CSF 2.0,"PR.AA-05, PR.DS-01",control
+SRV-DAT-03,File systems enforce access control and permissions on sensitive data,CIS Controls v8.1,3.3,control
+SRV-DAT-03,File systems enforce access control and permissions on sensitive data,SOC 2 (2017 TSC),"CC6.1, CC6.3",control
+SRV-DAT-03,File systems enforce access control and permissions on sensitive data,MITRE ATT&CK,DE:T1222 | CO:T1005,control
+SRV-DAT-03,File systems enforce access control and permissions on sensitive data,NIST SP 800-53 / vendor,NIST SP 800-111; NIST SP 800-52 Rev.2; CIS Control 3,family
+SRV-DAT-03,File systems enforce access control and permissions on sensitive data,NIST SP 800-207 Zero Trust,DT,control
+SRV-GOV-01,Every server is registered in an authoritative inventory reconciled with discovery,ISO/IEC 27001:2022 Annex A,A.5.9,control
+SRV-GOV-01,Every server is registered in an authoritative inventory reconciled with discovery,ISO/IEC 27001:2022 management system,"5.3, 6.1.2, 8.2",family
+SRV-GOV-01,Every server is registered in an authoritative inventory reconciled with discovery,NIST CSF 2.0,"ID.AM-01, ID.AM-02",control
+SRV-GOV-01,Every server is registered in an authoritative inventory reconciled with discovery,CIS Controls v8.1,"1.1, 1.2",control
+SRV-GOV-01,Every server is registered in an authoritative inventory reconciled with discovery,SOC 2 (2017 TSC),CC6.1,control
+SRV-GOV-01,Every server is registered in an authoritative inventory reconciled with discovery,MITRE ATT&CK,DI:T1018,control
+SRV-GOV-01,Every server is registered in an authoritative inventory reconciled with discovery,NIST SP 800-53 / vendor,ISO/IEC 27005; NIST SP 800-30 Rev.1; NIST SP 800-53 Rev.5 RA and SA families; ISO/IEC 27036 (supplier relationships),family
+SRV-GOV-01,Every server is registered in an authoritative inventory reconciled with discovery,NIST SP 800-207 Zero Trust,IN,control
+SRV-GOV-02,"Every server has accountable owners, a criticality rating and a data classification",ISO/IEC 27001:2022 Annex A,"A.5.2, A.5.9, A.5.12, A.5.13",control
+SRV-GOV-02,"Every server has accountable owners, a criticality rating and a data classification",ISO/IEC 27001:2022 management system,"5.3, 6.1.2, 8.2",family
+SRV-GOV-02,"Every server has accountable owners, a criticality rating and a data classification",NIST CSF 2.0,"GV.RR-02, ID.AM-05",control
+SRV-GOV-02,"Every server has accountable owners, a criticality rating and a data classification",CIS Controls v8.1,"1.1, 3.2",control
+SRV-GOV-02,"Every server has accountable owners, a criticality rating and a data classification",SOC 2 (2017 TSC),CC1.3,control
+SRV-GOV-02,"Every server has accountable owners, a criticality rating and a data classification",NIST SP 800-53 / vendor,ISO/IEC 27005; NIST SP 800-30 Rev.1; NIST SP 800-53 Rev.5 RA and SA families; ISO/IEC 27036 (supplier relationships),family
+SRV-GOV-02,"Every server has accountable owners, a criticality rating and a data classification",NIST SP 800-207 Zero Trust,IN,control
+SRV-GOV-03,A security review and risk assessment is completed before production and on significant change,ISO/IEC 27001:2022 Annex A,"A.5.8, A.8.29",control
+SRV-GOV-03,A security review and risk assessment is completed before production and on significant change,ISO/IEC 27001:2022 management system,"5.3, 6.1.2, 8.2",family
+SRV-GOV-03,A security review and risk assessment is completed before production and on significant change,NIST CSF 2.0,"ID.RA-05, ID.RA-06",control
+SRV-GOV-03,A security review and risk assessment is completed before production and on significant change,SOC 2 (2017 TSC),"CC3.2, CC8.1",control
+SRV-GOV-03,A security review and risk assessment is completed before production and on significant change,NIST SP 800-53 / vendor,ISO/IEC 27005; NIST SP 800-30 Rev.1; NIST SP 800-53 Rev.5 RA and SA families; ISO/IEC 27036 (supplier relationships),family
+SRV-GOV-03,A security review and risk assessment is completed before production and on significant change,NIST SP 800-207 Zero Trust,IN,control
+SRV-GOV-04,Third-party system administration and hosting are governed through contracts and access controls,ISO/IEC 27001:2022 Annex A,"A.5.19, A.5.20, A.5.21, A.5.22",control
+SRV-GOV-04,Third-party system administration and hosting are governed through contracts and access controls,ISO/IEC 27001:2022 management system,"5.3, 6.1.2, 8.2",family
+SRV-GOV-04,Third-party system administration and hosting are governed through contracts and access controls,NIST CSF 2.0,"GV.SC-05, GV.SC-06",control
+SRV-GOV-04,Third-party system administration and hosting are governed through contracts and access controls,CIS Controls v8.1,"15.1, 15.4",control
+SRV-GOV-04,Third-party system administration and hosting are governed through contracts and access controls,SOC 2 (2017 TSC),CC9.2,control
+SRV-GOV-04,Third-party system administration and hosting are governed through contracts and access controls,MITRE ATT&CK,"IA:T1195, T1199",control
+SRV-GOV-04,Third-party system administration and hosting are governed through contracts and access controls,NIST SP 800-53 / vendor,ISO/IEC 27005; NIST SP 800-30 Rev.1; NIST SP 800-53 Rev.5 RA and SA families; ISO/IEC 27036 (supplier relationships),family
+SRV-GOV-04,Third-party system administration and hosting are governed through contracts and access controls,NIST SP 800-207 Zero Trust,"IN,ID",control
+SRV-VIR-01,Virtualization management planes are isolated and hardened,ISO/IEC 27001:2022 Annex A,"A.8.20, A.8.22, A.8.9",control
+SRV-VIR-01,Virtualization management planes are isolated and hardened,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-VIR-01,Virtualization management planes are isolated and hardened,NIST CSF 2.0,PR.IR-01,control
+SRV-VIR-01,Virtualization management planes are isolated and hardened,CIS Controls v8.1,"4.6, 12.2",control
+SRV-VIR-01,Virtualization management planes are isolated and hardened,SOC 2 (2017 TSC),CC6.6,control
+SRV-VIR-01,Virtualization management planes are isolated and hardened,MITRE ATT&CK,IA:T1190 | LM:T1021 | IM:T1486,control
+SRV-VIR-01,Virtualization management planes are isolated and hardened,NIST SP 800-53 / vendor,VMware vSphere Security Configuration Guide; Microsoft Hyper-V security documentation; CIS Benchmarks (VMware ESXi); Proxmox VE administration guide; NIST SP 800-125,family
+SRV-VIR-01,Virtualization management planes are isolated and hardened,NIST SP 800-207 Zero Trust,"NW,IN",control
+SRV-VIR-02,"Hypervisor administrative access uses central identity, MFA and least privilege",ISO/IEC 27001:2022 Annex A,"A.8.2, A.8.5, A.5.15",control
+SRV-VIR-02,"Hypervisor administrative access uses central identity, MFA and least privilege",ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-VIR-02,"Hypervisor administrative access uses central identity, MFA and least privilege",NIST CSF 2.0,"PR.AA-03, PR.AA-05",control
+SRV-VIR-02,"Hypervisor administrative access uses central identity, MFA and least privilege",CIS Controls v8.1,"5.4, 6.5, 6.7",control
+SRV-VIR-02,"Hypervisor administrative access uses central identity, MFA and least privilege",SOC 2 (2017 TSC),"CC6.1, CC6.3",control
+SRV-VIR-02,"Hypervisor administrative access uses central identity, MFA and least privilege",MITRE ATT&CK,IA:T1078 | PE:T1078,control
+SRV-VIR-02,"Hypervisor administrative access uses central identity, MFA and least privilege",NIST SP 800-53 / vendor,VMware vSphere Security Configuration Guide; Microsoft Hyper-V security documentation; CIS Benchmarks (VMware ESXi); Proxmox VE administration guide; NIST SP 800-125,family
+SRV-VIR-02,"Hypervisor administrative access uses central identity, MFA and least privilege",NIST SP 800-207 Zero Trust,"ID,IN",control
+SRV-VIR-03,Virtual machines are built from hardened templates with controlled snapshots and devices,ISO/IEC 27001:2022 Annex A,"A.8.9, A.8.19",control
+SRV-VIR-03,Virtual machines are built from hardened templates with controlled snapshots and devices,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-VIR-03,Virtual machines are built from hardened templates with controlled snapshots and devices,NIST CSF 2.0,PR.PS-01,control
+SRV-VIR-03,Virtual machines are built from hardened templates with controlled snapshots and devices,CIS Controls v8.1,"4.1, 4.8",control
+SRV-VIR-03,Virtual machines are built from hardened templates with controlled snapshots and devices,SOC 2 (2017 TSC),"CC6.1, CC7.1",control
+SRV-VIR-03,Virtual machines are built from hardened templates with controlled snapshots and devices,MITRE ATT&CK,PE:T1611 | CO:T1005,control
+SRV-VIR-03,Virtual machines are built from hardened templates with controlled snapshots and devices,NIST SP 800-53 / vendor,VMware vSphere Security Configuration Guide; Microsoft Hyper-V security documentation; CIS Benchmarks (VMware ESXi); Proxmox VE administration guide; NIST SP 800-125,family
+SRV-VIR-03,Virtual machines are built from hardened templates with controlled snapshots and devices,NIST SP 800-207 Zero Trust,"IN,DV",control
+SRV-VIR-04,Virtual networks and storage access are segmented and restricted,ISO/IEC 27001:2022 Annex A,"A.8.20, A.8.22",control
+SRV-VIR-04,Virtual networks and storage access are segmented and restricted,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-VIR-04,Virtual networks and storage access are segmented and restricted,NIST CSF 2.0,PR.IR-01,control
+SRV-VIR-04,Virtual networks and storage access are segmented and restricted,CIS Controls v8.1,"12.2, 13.4",control
+SRV-VIR-04,Virtual networks and storage access are segmented and restricted,SOC 2 (2017 TSC),CC6.6,control
+SRV-VIR-04,Virtual networks and storage access are segmented and restricted,MITRE ATT&CK,LM:T1021 | CA:T1040,control
+SRV-VIR-04,Virtual networks and storage access are segmented and restricted,NIST SP 800-53 / vendor,VMware vSphere Security Configuration Guide; Microsoft Hyper-V security documentation; CIS Benchmarks (VMware ESXi); Proxmox VE administration guide; NIST SP 800-125,family
+SRV-VIR-04,Virtual networks and storage access are segmented and restricted,NIST SP 800-207 Zero Trust,"NW,IN",control
+SRV-VIR-05,Hypervisor logging and ransomware resilience controls are in place,ISO/IEC 27001:2022 Annex A,"A.8.15, A.8.16, A.8.13, A.8.9",control
+SRV-VIR-05,Hypervisor logging and ransomware resilience controls are in place,ISO/IEC 27001:2022 management system,"6.1.3, 8.1",family
+SRV-VIR-05,Hypervisor logging and ransomware resilience controls are in place,NIST CSF 2.0,"PR.PS-04, DE.CM-09, PR.DS-11",control
+SRV-VIR-05,Hypervisor logging and ransomware resilience controls are in place,CIS Controls v8.1,"8.2, 8.9, 11.2",control
+SRV-VIR-05,Hypervisor logging and ransomware resilience controls are in place,SOC 2 (2017 TSC),"CC7.2, A1.2",control
+SRV-VIR-05,Hypervisor logging and ransomware resilience controls are in place,MITRE ATT&CK,IM:T1486 | DE:T1070 | EX:T1059,control
+SRV-VIR-05,Hypervisor logging and ransomware resilience controls are in place,NIST SP 800-53 / vendor,VMware vSphere Security Configuration Guide; Microsoft Hyper-V security documentation; CIS Benchmarks (VMware ESXi); Proxmox VE administration guide; NIST SP 800-125,family
+SRV-VIR-05,Hypervisor logging and ransomware resilience controls are in place,NIST SP 800-207 Zero Trust,IN,control

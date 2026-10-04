@@ -1,0 +1,20 @@
+﻿num,code,domain,scope,target_controls,controls_built,percent_of_target,proposed_batch,status
+1,GOV,Governance,"Security strategy, program, policies, standards, procedures, framework alignment, risk governance, third-party governance",50,0,0.0,Batch 2,Not started
+2,AST,Asset Management,"Asset inventory, discovery, shadow IT, software, hardware, cloud assets, SaaS assets",25,0,0.0,Batch 2,Not started
+3,IAM,Identity and Access Management,"Active Directory (forest, trusts, tiering, admin accounts, GPO), Entra ID (MFA, Conditional Access, Identity Protection, access reviews, PIM), PAM (sessions, vaulting, JIT)",60,0,0.0,Batch 1,Not started
+4,END,Endpoint Security,"Windows, Linux, macOS, iOS, Android (including mobile device management)",50,0,0.0,Batch 3,Not started
+5,SRV,Server Security,"Windows Server, Linux Server, Hyper-V, VMware, Proxmox",60,60,1.0,Pilot (built),Complete
+6,NET,Network Security,"Routers, switches, firewalls, VPN, wireless, NAC, IDS/IPS, DNS, proxy",75,0,0.0,Batch 3,Not started
+7,M365,Microsoft 365,"Exchange, Teams, SharePoint, OneDrive, Purview, Defender, Intune, Entra",80,0,0.0,Batch 1,Not started
+8,CLD,Cloud Security,"Azure, AWS, GCP: IAM, networking, storage, monitoring, logging, containers and Kubernetes",100,0,0.0,Batch 1,Not started
+9,APP,Application Security,"Secure SDLC, architecture, authentication, authorization, input validation, logging, secrets management",80,0,0.0,Batch 4,Not started
+10,API,API Security,"OAuth, OIDC, JWT, rate limiting, API gateway, API logging",40,0,0.0,Batch 4,Not started
+11,SOC,Security Operations,"Logging, SIEM, SOAR, threat intelligence, detection engineering, incident response",70,0,0.0,Batch 2,Not started
+12,VLM,Vulnerability Management,"Discovery, scanning, prioritization, remediation, validation",35,0,0.0,Batch 2,Not started
+13,DPR,Data Protection,"Classification, encryption, DLP, retention, privacy",40,0,0.0,Batch 3,Not started
+14,BKP,Backup and Recovery,"Backups, replication, recovery, DR testing",30,0,0.0,Batch 3,Not started
+15,DSO,DevSecOps,"CI/CD, repositories, secrets, containers, IaC",60,0,0.0,Batch 4,Not started
+16,GWS,Google Workspace,"Admin console, identity and 2SV, Gmail, Drive, Meet, DLP, context-aware access (target 50 is an assumption)",50,0,0.0,Batch 4,Not started
+17,OT,OT/ICS (future),Reserved for operational technology and industrial control systems,0,0,n/a,Placeholder,Placeholder
+18,AI,AI Systems (future),"Reserved for AI/ML systems, model supply chain, and AI governance",0,0,n/a,Placeholder,Placeholder
+,,Total,,905,60,0.0663,,

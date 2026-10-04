@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://saos.local/schemas/control.schema.json",
+  "title": "SAOS control",
+  "description": "Schema for a single entry in a SAOS library/controls/*.yaml file. The YAML files contain a sequence of objects that each conform to this schema. Field semantics are documented in artefacts/02-methodology/CONTROL-SCHEMA.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "plat", "obj", "biz", "thr", "q", "type", "ev", "proc", "test", "auto", "autom", "L", "I", "w", "m1", "m3", "m5", "rem", "iso", "csf", "cis", "soc", "att", "zt", "orig"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}-[A-Z]{3}-[0-9]{2}$",
+      "description": "Control identifier: DOMAIN-FAMILY-SEQUENCE, e.g. SRV-LOG-02. Must be unique across the whole library."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 160,
+      "description": "Control statement written as a positive assertion of the desired state."
+    },
+    "plat": {
+      "type": "string",
+      "enum": ["All", "Windows", "Linux", "Hypervisor"],
+      "description": "Platform the control applies to. 'All' means every platform in the domain scope."
+    },
+    "obj": {
+      "type": "string",
+      "minLength": 20,
+      "description": "Objective: what the control achieves and why it is written this way."
+    },
+    "biz": {
+      "type": "string",
+      "minLength": 20,
+      "description": "Business justification: the consequence if the control is absent, in business language."
+    },
+    "thr": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Threat prevented. Semicolon-separated threat scenarios."
+    },
+    "q": {
+      "type": "string",
+      "minLength": 20,
+      "description": "Assessment question: the single question the assessor answers to test the control."
+    },
+    "type": {
+      "type": "string",
+      "enum": ["Preventive", "Detective", "Corrective"],
+      "description": "Control type."
+    },
+    "ev": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Evidence required. Semicolon-separated list; each item becomes one row on the Evidence_Requests sheet and one ER-<control-id>-<n> request ID."
+    },
+    "proc": {
+      "type": "string",
+      "minLength": 20,
+      "description": "Validation procedure: step-by-step test instructions. Use a YAML block scalar (|-) for multi-line text."
+    },
+    "test": {
+      "type": "string",
+      "pattern": "^(INT|DOC|CFG|OBS|TECH|AUTO|PEN)(,(INT|DOC|CFG|OBS|TECH|AUTO|PEN))*$",
+      "description": "Permitted test methods, comma separated: INT, DOC, CFG, OBS, TECH, AUTO, PEN."
+    },
+    "auto": {
+      "type": "string",
+      "enum": ["Low", "Medium", "High"],
+      "description": "Automation potential for evidence collection or testing."
+    },
+    "autom": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Automation method: the specific tool, API or query used to collect or test this control."
+    },
+    "L": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Default likelihood that the weakness is exploited within 12 months. Drives inherent risk before any client override."
+    },
+    "I": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Default impact if the weakness is exploited. Drives inherent risk before any client override."
+    },
+    "w": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3,
+      "description": "Criticality weight used in domain and family weighted-average maturity: 1 low, 2 medium, 3 high."
+    },
+    "m1": { "type": "string", "minLength": 10, "description": "Maturity anchor for level 1 (Initial): what an organisation at level 1 looks like." },
+    "m3": { "type": "string", "minLength": 10, "description": "Maturity anchor for level 3 (Defined): the minimum bar for a documented, operating control." },
+    "m5": { "type": "string", "minLength": 10, "description": "Maturity anchor for level 5 (Optimized): what continuous improvement and automation look like." },
+    "rem": { "type": "string", "minLength": 20, "description": "Remediation guidance: the concrete action that raises the control to the next level." },
+    "ref": {
+      "type": "string",
+      "description": "Optional per-control reference override. When absent the family default from library/meta.yaml is used."
+    },
+    "iso": {
+      "type": "string",
+      "description": "ISO/IEC 27001:2022 Annex A controls. Comma separated, e.g. 'A.8.9, A.8.20'. Use 'N/A' if none."
+    },
+    "csf": {
+      "type": "string",
+      "description": "NIST CSF 2.0 subcategories. Must carry the function prefix, e.g. 'PR.PS-01, PR.IR-01'."
+    },
+    "cis": {
+      "type": "string",
+      "description": "CIS Controls v8.1 safeguards as major.minor, e.g. '4.6, 12.2'. Quote in YAML so it stays a string. Use 'N/A' if none."
+    },
+    "soc": {
+      "type": "string",
+      "description": "SOC 2 (2017 Trust Services Criteria) points, e.g. 'CC6.1, CC6.6'. Use 'N/A' if none."
+    },
+    "att": {
+      "type": "string",
+      "description": "MITRE ATT&CK mapping as TACTIC:technique[,technique] groups separated by '|', e.g. \"'IA:T1190 | PS:T1542.001'\". Use 'N/A' if none."
+    },
+    "zt": {
+      "type": "string",
+      "pattern": "^(ID|DV|NW|AP|DT|IN)(,(ID|DV|NW|AP|DT|IN))*$",
+      "description": "NIST SP 800-207 Zero Trust pillars touched: ID, DV, NW, AP, DT, IN."
+    },
+    "asvs": { "type": "string", "description": "Optional OWASP ASVS chapter (V1-V14 for ASVS 4.0.3)." },
+    "owasp": { "type": "string", "description": "Optional OWASP Top 10:2021 category." },
+    "orig": {
+      "type": "string",
+      "description": "Checklist origin: 'New' for SAOS-authored, or the source checklist reference (e.g. '1.1') when the control was ported from an existing checklist."
+    }
+  }
+}

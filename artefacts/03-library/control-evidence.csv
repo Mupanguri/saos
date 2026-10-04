@@ -1,0 +1,258 @@
+﻿request_id,control_id,control_name,sequence,evidence_item
+ER-SRV-PHY-01-1,SRV-PHY-01,Physical access to servers is restricted and logged,1,Authorised access list
+ER-SRV-PHY-01-2,SRV-PHY-01,Physical access to servers is restricted and logged,2,badge and visitor logs (90 days)
+ER-SRV-PHY-01-3,SRV-PHY-01,Physical access to servers is restricted and logged,3,CCTV coverage evidence
+ER-SRV-PHY-01-4,SRV-PHY-01,Physical access to servers is restricted and logged,4,photos of rack locks
+ER-SRV-PHY-01-5,SRV-PHY-01,Physical access to servers is restricted and logged,5,physical security policy
+ER-SRV-PHY-01-6,SRV-PHY-01,Physical access to servers is restricted and logged,6,colocation contract and assurance report if hosted
+ER-SRV-PHY-02-1,SRV-PHY-02,Out-of-band management interfaces are isolated and hardened,1,Management network diagram
+ER-SRV-PHY-02-2,SRV-PHY-02,Out-of-band management interfaces are isolated and hardened,2,BMC inventory with firmware versions
+ER-SRV-PHY-02-3,SRV-PHY-02,Out-of-band management interfaces are isolated and hardened,3,firewall rules for the management VLAN
+ER-SRV-PHY-02-4,SRV-PHY-02,Out-of-band management interfaces are isolated and hardened,4,BMC user list and authentication settings
+ER-SRV-PHY-03-1,SRV-PHY-03,Removable media and unused ports are controlled,1,"GPO, MDM, udev or USBGuard configuration"
+ER-SRV-PHY-03-2,SRV-PHY-03,Removable media and unused ports are controlled,2,BIOS/UEFI boot-order settings
+ER-SRV-PHY-03-3,SRV-PHY-03,Removable media and unused ports are controlled,3,media handling policy
+ER-SRV-PHY-03-4,SRV-PHY-03,Removable media and unused ports are controlled,4,exception register
+ER-SRV-PHY-04-1,SRV-PHY-04,Storage media is sanitised or destroyed before replacement and disposal,1,Media disposal procedure
+ER-SRV-PHY-04-2,SRV-PHY-04,Storage media is sanitised or destroyed before replacement and disposal,2,certificates of destruction
+ER-SRV-PHY-04-3,SRV-PHY-04,Storage media is sanitised or destroyed before replacement and disposal,3,asset disposal log
+ER-SRV-PHY-04-4,SRV-PHY-04,Storage media is sanitised or destroyed before replacement and disposal,4,RMA records
+ER-SRV-PHY-04-5,SRV-PHY-04,Storage media is sanitised or destroyed before replacement and disposal,5,encryption-at-rest evidence for returned drives
+ER-SRV-CFG-01-1,SRV-CFG-01,Secure configuration baselines are defined for every server platform,1,Baseline standard per OS
+ER-SRV-CFG-01-2,SRV-CFG-01,Secure configuration baselines are defined for every server platform,2,"golden image or build pipeline definitions (Packer, MDT, Ansible, Terraform)"
+ER-SRV-CFG-01-3,SRV-CFG-01,Secure configuration baselines are defined for every server platform,3,sample build checklist
+ER-SRV-CFG-01-4,SRV-CFG-01,Secure configuration baselines are defined for every server platform,4,exceptions register
+ER-SRV-CFG-02-1,SRV-CFG-02,Configuration drift from the baseline is detected and corrected,1,Compliance scan reports (last 3 cycles)
+ER-SRV-CFG-02-2,SRV-CFG-02,Configuration drift from the baseline is detected and corrected,2,remediation tickets
+ER-SRV-CFG-02-3,SRV-CFG-02,Configuration drift from the baseline is detected and corrected,3,scan schedule
+ER-SRV-CFG-02-4,SRV-CFG-02,Configuration drift from the baseline is detected and corrected,4,compliance dashboards
+ER-SRV-CFG-03-1,SRV-CFG-03,"Unnecessary services, roles, features and ports are disabled or removed",1,Service and role inventory per server
+ER-SRV-CFG-03-2,SRV-CFG-03,"Unnecessary services, roles, features and ports are disabled or removed",2,listening-port list
+ER-SRV-CFG-03-3,SRV-CFG-03,"Unnecessary services, roles, features and ports are disabled or removed",3,change records for removals
+ER-SRV-CFG-03-4,SRV-CFG-03,"Unnecessary services, roles, features and ports are disabled or removed",4,scan results
+ER-SRV-CFG-04-1,SRV-CFG-04,An approved authorised-use banner is displayed at login,1,Legal-approved banner text
+ER-SRV-CFG-04-2,SRV-CFG-04,An approved authorised-use banner is displayed at login,2,"screenshots of console, SSH and RDP logins"
+ER-SRV-CFG-04-3,SRV-CFG-04,An approved authorised-use banner is displayed at login,3,GPO or sshd configuration
+ER-SRV-CFG-04-4,SRV-CFG-04,An approved authorised-use banner is displayed at login,4,exception list
+ER-SRV-CFG-05-1,SRV-CFG-05,Boot chain integrity protections are enabled,1,UEFI settings exports or screenshots
+ER-SRV-CFG-05-2,SRV-CFG-05,Boot chain integrity protections are enabled,2,Secure Boot and TPM status output
+ER-SRV-CFG-05-3,SRV-CFG-05,Boot chain integrity protections are enabled,3,virtual machine firmware settings
+ER-SRV-CFG-05-4,SRV-CFG-05,Boot chain integrity protections are enabled,4,exception list
+ER-SRV-CFG-06-1,SRV-CFG-06,Server configuration changes follow documented change control,1,Change management policy
+ER-SRV-CFG-06-2,SRV-CFG-06,Server configuration changes follow documented change control,2,sample of 10 change tickets
+ER-SRV-CFG-06-3,SRV-CFG-06,Server configuration changes follow documented change control,3,CAB minutes
+ER-SRV-CFG-06-4,SRV-CFG-06,Server configuration changes follow documented change control,4,emergency change log
+ER-SRV-CFG-06-5,SRV-CFG-06,Server configuration changes follow documented change control,5,configuration repository history
+ER-SRV-CFG-07-1,SRV-CFG-07,Only authorised software can execute or be installed on servers,1,AppLocker or WDAC policy export
+ER-SRV-CFG-07-2,SRV-CFG-07,Only authorised software can execute or be installed on servers,2,fapolicyd or SELinux/AppArmor configuration
+ER-SRV-CFG-07-3,SRV-CFG-07,Only authorised software can execute or be installed on servers,3,software inventory against approved list
+ER-SRV-CFG-07-4,SRV-CFG-07,Only authorised software can execute or be installed on servers,4,audit-mode results
+ER-SRV-PAT-01-1,SRV-PAT-01,A documented patch management process with risk-based timelines exists,1,Patch policy or standard
+ER-SRV-PAT-01-2,SRV-PAT-01,A documented patch management process with risk-based timelines exists,2,patch calendar
+ER-SRV-PAT-01-3,SRV-PAT-01,A documented patch management process with risk-based timelines exists,3,timeline (SLA) table
+ER-SRV-PAT-01-4,SRV-PAT-01,A documented patch management process with risk-based timelines exists,4,records from two recent patch cycles
+ER-SRV-PAT-01-5,SRV-PAT-01,A documented patch management process with risk-based timelines exists,5,exception log
+ER-SRV-PAT-02-1,SRV-PAT-02,Patch currency is verified per server and installation failures are resolved,1,Patch compliance report
+ER-SRV-PAT-02-2,SRV-PAT-02,Patch currency is verified per server and installation failures are resolved,2,failed-installation report
+ER-SRV-PAT-02-3,SRV-PAT-02,Patch currency is verified per server and installation failures are resolved,3,tickets for failures
+ER-SRV-PAT-02-4,SRV-PAT-02,Patch currency is verified per server and installation failures are resolved,4,pending-reboot report
+ER-SRV-PAT-03-1,SRV-PAT-03,Unsupported and end-of-life systems are governed through approved exceptions,1,End-of-life inventory with dates
+ER-SRV-PAT-03-2,SRV-PAT-03,Unsupported and end-of-life systems are governed through approved exceptions,2,exception register with approvals and expiry
+ER-SRV-PAT-03-3,SRV-PAT-03,Unsupported and end-of-life systems are governed through approved exceptions,3,compensating-control evidence
+ER-SRV-PAT-03-4,SRV-PAT-03,Unsupported and end-of-life systems are governed through approved exceptions,4,migration roadmap
+ER-SRV-PAT-04-1,SRV-PAT-04,Emergency patching exists for actively exploited and critical vulnerabilities,1,Emergency patch procedure
+ER-SRV-PAT-04-2,SRV-PAT-04,Emergency patching exists for actively exploited and critical vulnerabilities,2,threat-intelligence or KEV subscription
+ER-SRV-PAT-04-3,SRV-PAT-04,Emergency patching exists for actively exploited and critical vulnerabilities,3,last 3 emergency events with timelines
+ER-SRV-PAT-04-4,SRV-PAT-04,Emergency patching exists for actively exploited and critical vulnerabilities,4,time-to-patch metrics
+ER-SRV-PAT-05-1,SRV-PAT-05,Firmware and hypervisor layers are inventoried and patched,1,"Firmware inventory (OpenManage, iLO, Redfish)"
+ER-SRV-PAT-05-2,SRV-PAT-05,Firmware and hypervisor layers are inventoried and patched,2,hypervisor build numbers versus vendor advisories
+ER-SRV-PAT-05-3,SRV-PAT-05,Firmware and hypervisor layers are inventoried and patched,3,firmware change tickets
+ER-SRV-LOG-01-1,SRV-LOG-01,Security-relevant events are logged on every server,1,Audit policy export
+ER-SRV-LOG-01-2,SRV-LOG-01,Security-relevant events are logged on every server,2,auditd and rsyslog configuration
+ER-SRV-LOG-01-3,SRV-LOG-01,Security-relevant events are logged on every server,3,sample log events
+ER-SRV-LOG-01-4,SRV-LOG-01,Security-relevant events are logged on every server,4,log source inventory
+ER-SRV-LOG-02-1,SRV-LOG-02,Logs are forwarded in near real time to a central tamper-resistant store,1,SIEM log-source health dashboard
+ER-SRV-LOG-02-2,SRV-LOG-02,Logs are forwarded in near real time to a central tamper-resistant store,2,"forwarder configuration (WEF/WEC, Azure Monitor Agent, rsyslog, Splunk UF)"
+ER-SRV-LOG-02-3,SRV-LOG-02,Logs are forwarded in near real time to a central tamper-resistant store,3,alert rules for log clearing and silent sources
+ER-SRV-LOG-03-1,SRV-LOG-03,Log retention satisfies investigation and regulatory needs,1,Retention policy
+ER-SRV-LOG-03-2,SRV-LOG-03,Log retention satisfies investigation and regulatory needs,2,SIEM retention configuration
+ER-SRV-LOG-03-3,SRV-LOG-03,Log retention satisfies investigation and regulatory needs,3,local log size settings
+ER-SRV-LOG-03-4,SRV-LOG-03,Log retention satisfies investigation and regulatory needs,4,regulatory retention requirements
+ER-SRV-LOG-04-1,SRV-LOG-04,Sensitive data is excluded from logs and log files are protected,1,Application logging configuration
+ER-SRV-LOG-04-2,SRV-LOG-04,Sensitive data is excluded from logs and log files are protected,2,sample log review
+ER-SRV-LOG-04-3,SRV-LOG-04,Sensitive data is excluded from logs and log files are protected,3,log file permission listings
+ER-SRV-LOG-04-4,SRV-LOG-04,Sensitive data is excluded from logs and log files are protected,4,secret-scan results for log stores
+ER-SRV-LOG-05-1,SRV-LOG-05,Log monitoring and alert triage run on a defined schedule and are reviewed for effectiveness,1,Log monitoring procedure and schedule
+ER-SRV-LOG-05-2,SRV-LOG-05,Log monitoring and alert triage run on a defined schedule and are reviewed for effectiveness,2,server use-case catalogue
+ER-SRV-LOG-05-3,SRV-LOG-05,Log monitoring and alert triage run on a defined schedule and are reviewed for effectiveness,3,triage records
+ER-SRV-LOG-05-4,SRV-LOG-05,Log monitoring and alert triage run on a defined schedule and are reviewed for effectiveness,4,monthly review minutes
+ER-SRV-LOG-05-5,SRV-LOG-05,Log monitoring and alert triage run on a defined schedule and are reviewed for effectiveness,5,detection metrics
+ER-SRV-LOG-06-1,SRV-LOG-06,Servers use authoritative time and name-resolution sources,1,NTP configuration
+ER-SRV-LOG-06-2,SRV-LOG-06,Servers use authoritative time and name-resolution sources,2,DNS resolver configuration
+ER-SRV-LOG-06-3,SRV-LOG-06,Servers use authoritative time and name-resolution sources,3,time status output
+ER-SRV-LOG-06-4,SRV-LOG-06,Servers use authoritative time and name-resolution sources,4,AD time hierarchy documentation
+ER-SRV-HST-01-1,SRV-HST-01,"Anti-malware or EDR is deployed, current and tamper-protected on servers",1,EDR console deployment report
+ER-SRV-HST-01-2,SRV-HST-01,"Anti-malware or EDR is deployed, current and tamper-protected on servers",2,coverage versus inventory
+ER-SRV-HST-01-3,SRV-HST-01,"Anti-malware or EDR is deployed, current and tamper-protected on servers",3,exclusion list
+ER-SRV-HST-01-4,SRV-HST-01,"Anti-malware or EDR is deployed, current and tamper-protected on servers",4,tamper protection setting
+ER-SRV-HST-02-1,SRV-HST-02,A host firewall enforces default-deny inbound rules,1,Firewall rule exports
+ER-SRV-HST-02-2,SRV-HST-02,A host firewall enforces default-deny inbound rules,2,GPO
+ER-SRV-HST-02-3,SRV-HST-02,A host firewall enforces default-deny inbound rules,3,nftables or firewalld configuration
+ER-SRV-HST-02-4,SRV-HST-02,A host firewall enforces default-deny inbound rules,4,rule review records
+ER-SRV-HST-03-1,SRV-HST-03,Host intrusion prevention and exploit mitigations are enabled,1,HIPS or EDR prevention policy
+ER-SRV-HST-03-2,SRV-HST-03,Host intrusion prevention and exploit mitigations are enabled,2,exploit-protection configuration
+ER-SRV-HST-03-3,SRV-HST-03,Host intrusion prevention and exploit mitigations are enabled,3,list of authentication servers with HIPS status
+ER-SRV-HST-04-1,SRV-HST-04,File and configuration integrity monitoring covers critical system paths,1,FIM policy and monitored paths
+ER-SRV-HST-04-2,SRV-HST-04,File and configuration integrity monitoring covers critical system paths,2,alert samples
+ER-SRV-HST-04-3,SRV-HST-04,File and configuration integrity monitoring covers critical system paths,3,baseline hash database
+ER-SRV-HST-04-4,SRV-HST-04,File and configuration integrity monitoring covers critical system paths,4,EDR or FIM console
+ER-SRV-VUL-01-1,SRV-VUL-01,Servers are hardened and vulnerability-assessed before entering production,1,Go-live checklist
+ER-SRV-VUL-01-2,SRV-VUL-01,Servers are hardened and vulnerability-assessed before entering production,2,pre-production scan and baseline compliance report
+ER-SRV-VUL-01-3,SRV-VUL-01,Servers are hardened and vulnerability-assessed before entering production,3,sign-off record
+ER-SRV-VUL-01-4,SRV-VUL-01,Servers are hardened and vulnerability-assessed before entering production,4,retained report archive
+ER-SRV-VUL-02-1,SRV-VUL-02,Servers receive recurring credentialed vulnerability scans,1,Scan schedule
+ER-SRV-VUL-02-2,SRV-VUL-02,Servers receive recurring credentialed vulnerability scans,2,coverage report versus inventory
+ER-SRV-VUL-02-3,SRV-VUL-02,Servers receive recurring credentialed vulnerability scans,3,scan credential policy
+ER-SRV-VUL-02-4,SRV-VUL-02,Servers receive recurring credentialed vulnerability scans,4,last 3 scan results
+ER-SRV-VUL-02-5,SRV-VUL-02,Servers receive recurring credentialed vulnerability scans,5,authentication failure report
+ER-SRV-VUL-03-1,SRV-VUL-03,Vulnerability scanning is formally authorised and scanning tools are governed,1,Scanning authorisation or rules of engagement
+ER-SRV-VUL-03-2,SRV-VUL-03,Vulnerability scanning is formally authorised and scanning tools are governed,2,approved-tool list
+ER-SRV-VUL-03-3,SRV-VUL-03,Vulnerability scanning is formally authorised and scanning tools are governed,3,scanner service-account permissions
+ER-SRV-VUL-03-4,SRV-VUL-03,Vulnerability scanning is formally authorised and scanning tools are governed,4,security-tool allow-list rationale
+ER-SRV-VUL-03-5,SRV-VUL-03,Vulnerability scanning is formally authorised and scanning tools are governed,5,authorised operator list
+ER-SRV-VUL-04-1,SRV-VUL-04,"Vulnerabilities are prioritised by risk, remediated within timelines and verified by rescan",1,Vulnerability management standard with timelines
+ER-SRV-VUL-04-2,SRV-VUL-04,"Vulnerabilities are prioritised by risk, remediated within timelines and verified by rescan",2,aged vulnerability report
+ER-SRV-VUL-04-3,SRV-VUL-04,"Vulnerabilities are prioritised by risk, remediated within timelines and verified by rescan",3,exception register
+ER-SRV-VUL-04-4,SRV-VUL-04,"Vulnerabilities are prioritised by risk, remediated within timelines and verified by rescan",4,rescan evidence
+ER-SRV-VUL-04-5,SRV-VUL-04,"Vulnerabilities are prioritised by risk, remediated within timelines and verified by rescan",5,time-to-remediate metrics
+ER-SRV-NET-01-1,SRV-NET-01,Servers are placed in segmented zones with documented and minimised network exposure,1,Network diagrams
+ER-SRV-NET-01-2,SRV-NET-01,Servers are placed in segmented zones with documented and minimised network exposure,2,firewall rule exports for server zones
+ER-SRV-NET-01-3,SRV-NET-01,Servers are placed in segmented zones with documented and minimised network exposure,3,data-flow documentation
+ER-SRV-NET-01-4,SRV-NET-01,Servers are placed in segmented zones with documented and minimised network exposure,4,external attack-surface scan
+ER-SRV-NET-01-5,SRV-NET-01,Servers are placed in segmented zones with documented and minimised network exposure,5,segmentation test results
+ER-SRV-NET-01-6,SRV-NET-01,Servers are placed in segmented zones with documented and minimised network exposure,6,list of specialised-computing participants
+ER-SRV-IAM-01-1,SRV-IAM-01,"Default accounts and credentials are changed, renamed or disabled",1,Default-account review
+ER-SRV-IAM-01-2,SRV-IAM-01,"Default accounts and credentials are changed, renamed or disabled",2,account listings per system
+ER-SRV-IAM-01-3,SRV-IAM-01,"Default accounts and credentials are changed, renamed or disabled",3,default-credential scan results
+ER-SRV-IAM-01-4,SRV-IAM-01,"Default accounts and credentials are changed, renamed or disabled",4,BMC and appliance credential rotation records
+ER-SRV-IAM-02-1,SRV-IAM-02,Strong authentication is enforced for all administrative and root access,1,PAM or jump host configuration
+ER-SRV-IAM-02-2,SRV-IAM-02,Strong authentication is enforced for all administrative and root access,2,MFA and Conditional Access policy export
+ER-SRV-IAM-02-3,SRV-IAM-02,Strong authentication is enforced for all administrative and root access,3,sshd configuration
+ER-SRV-IAM-02-4,SRV-IAM-02,Strong authentication is enforced for all administrative and root access,4,admin accounts with authentication method
+ER-SRV-IAM-02-5,SRV-IAM-02,Strong authentication is enforced for all administrative and root access,5,exception list
+ER-SRV-IAM-03-1,SRV-IAM-03,"Access to the server, applications and data follows least privilege",1,Role and group matrix
+ER-SRV-IAM-03-2,SRV-IAM-03,"Access to the server, applications and data follows least privilege",2,local and domain group membership exports
+ER-SRV-IAM-03-3,SRV-IAM-03,"Access to the server, applications and data follows least privilege",3,ACL listings for key data
+ER-SRV-IAM-03-4,SRV-IAM-03,"Access to the server, applications and data follows least privilege",4,last access review
+ER-SRV-IAM-04-1,SRV-IAM-04,"Access is granted, changed and removed through a documented process with periodic review",1,Access procedure
+ER-SRV-IAM-04-2,SRV-IAM-04,"Access is granted, changed and removed through a documented process with periodic review",2,approved access request sample
+ER-SRV-IAM-04-3,SRV-IAM-04,"Access is granted, changed and removed through a documented process with periodic review",3,leaver list versus server accounts
+ER-SRV-IAM-04-4,SRV-IAM-04,"Access is granted, changed and removed through a documented process with periodic review",4,recertification records
+ER-SRV-IAM-05-1,SRV-IAM-05,"Generic, shared and guest interactive accounts are disabled",1,Account inventory with type classification
+ER-SRV-IAM-05-2,SRV-IAM-05,"Generic, shared and guest interactive accounts are disabled",2,exception approvals
+ER-SRV-IAM-05-3,SRV-IAM-05,"Generic, shared and guest interactive accounts are disabled",3,PAM checkout logs
+ER-SRV-IAM-06-1,SRV-IAM-06,"Trust relationships are identified, justified and reviewed",1,Trust inventory
+ER-SRV-IAM-06-2,SRV-IAM-06,"Trust relationships are identified, justified and reviewed",2,AD trust export
+ER-SRV-IAM-06-3,SRV-IAM-06,"Trust relationships are identified, justified and reviewed",3,authorized_keys inventory
+ER-SRV-IAM-06-4,SRV-IAM-06,"Trust relationships are identified, justified and reviewed",4,delegation settings
+ER-SRV-IAM-06-5,SRV-IAM-06,"Trust relationships are identified, justified and reviewed",5,review sign-off
+ER-SRV-IAM-07-1,SRV-IAM-07,"Local administrator and root credentials are unique, rotated and vaulted",1,Windows LAPS policy
+ER-SRV-IAM-07-2,SRV-IAM-07,"Local administrator and root credentials are unique, rotated and vaulted",2,AD attribute permissions
+ER-SRV-IAM-07-3,SRV-IAM-07,"Local administrator and root credentials are unique, rotated and vaulted",3,PAM vault configuration
+ER-SRV-IAM-07-4,SRV-IAM-07,"Local administrator and root credentials are unique, rotated and vaulted",4,rotation logs
+ER-SRV-IAM-08-1,SRV-IAM-08,"Service accounts are inventoried, owned, least-privileged and protected",1,Service account register
+ER-SRV-IAM-08-2,SRV-IAM-08,"Service accounts are inventoried, owned, least-privileged and protected",2,gMSA list
+ER-SRV-IAM-08-3,SRV-IAM-08,"Service accounts are inventoried, owned, least-privileged and protected",3,SPN review
+ER-SRV-IAM-08-4,SRV-IAM-08,"Service accounts are inventoried, owned, least-privileged and protected",4,password-age report
+ER-SRV-IAM-08-5,SRV-IAM-08,"Service accounts are inventoried, owned, least-privileged and protected",5,vault records
+ER-SRV-IAM-09-1,SRV-IAM-09,Root login and privilege escalation on Linux are restricted and logged,1,sudoers files
+ER-SRV-IAM-09-2,SRV-IAM-09,Root login and privilege escalation on Linux are restricted and logged,2,sshd configuration
+ER-SRV-IAM-09-3,SRV-IAM-09,Root login and privilege escalation on Linux are restricted and logged,3,PAM configuration
+ER-SRV-IAM-09-4,SRV-IAM-09,Root login and privilege escalation on Linux are restricted and logged,4,sudo logs
+ER-SRV-ADM-01-1,SRV-ADM-01,Only secure protocols are used for administration and credential transmission,1,Protocol configuration
+ER-SRV-ADM-01-2,SRV-ADM-01,Only secure protocols are used for administration and credential transmission,2,listening-service inventory
+ER-SRV-ADM-01-3,SRV-ADM-01,Only secure protocols are used for administration and credential transmission,3,firewall rules for admin ports
+ER-SRV-ADM-01-4,SRV-ADM-01,Only secure protocols are used for administration and credential transmission,4,scan results showing no cleartext admin protocols
+ER-SRV-ADM-02-1,SRV-ADM-02,Servers are administered only from hardened administrative workstations or jump hosts,1,PAW or bastion standard
+ER-SRV-ADM-02-2,SRV-ADM-02,Servers are administered only from hardened administrative workstations or jump hosts,2,firewall rules allowing admin protocols only from jump hosts
+ER-SRV-ADM-02-3,SRV-ADM-02,Servers are administered only from hardened administrative workstations or jump hosts,3,PAW compliance reports
+ER-SRV-ADM-02-4,SRV-ADM-02,Servers are administered only from hardened administrative workstations or jump hosts,4,session logs
+ER-SRV-BCK-01-1,SRV-BCK-01,Operationally critical servers are covered by a defined backup scope with RPO and RTO,1,Critical-system register with RPO/RTO
+ER-SRV-BCK-01-2,SRV-BCK-01,Operationally critical servers are covered by a defined backup scope with RPO and RTO,2,backup job list versus server inventory
+ER-SRV-BCK-01-3,SRV-BCK-01,Operationally critical servers are covered by a defined backup scope with RPO and RTO,3,backup success reports (30 days)
+ER-SRV-BCK-02-1,SRV-BCK-02,"System, application and data restoration procedures are documented and accessible",1,Restoration runbooks
+ER-SRV-BCK-02-2,SRV-BCK-02,"System, application and data restoration procedures are documented and accessible",2,DR plan
+ER-SRV-BCK-02-3,SRV-BCK-02,"System, application and data restoration procedures are documented and accessible",3,offline copy location
+ER-SRV-BCK-02-4,SRV-BCK-02,"System, application and data restoration procedures are documented and accessible",4,last review date
+ER-SRV-BCK-02-5,SRV-BCK-02,"System, application and data restoration procedures are documented and accessible",5,dependency map
+ER-SRV-BCK-03-1,SRV-BCK-03,Backups are verified and restores are tested on a defined schedule,1,Restore test reports
+ER-SRV-BCK-03-2,SRV-BCK-03,Backups are verified and restores are tested on a defined schedule,2,backup verification logs
+ER-SRV-BCK-03-3,SRV-BCK-03,Backups are verified and restores are tested on a defined schedule,3,DR exercise results with achieved RTO and RPO
+ER-SRV-BCK-03-4,SRV-BCK-03,Backups are verified and restores are tested on a defined schedule,4,remediation actions
+ER-SRV-BCK-04-1,SRV-BCK-04,An off-site and offline or immutable backup copy exists,1,Backup architecture diagram
+ER-SRV-BCK-04-2,SRV-BCK-04,An off-site and offline or immutable backup copy exists,2,immutability and retention-lock settings
+ER-SRV-BCK-04-3,SRV-BCK-04,An off-site and offline or immutable backup copy exists,3,off-site location contract
+ER-SRV-BCK-04-4,SRV-BCK-04,An off-site and offline or immutable backup copy exists,4,deletion-protection configuration
+ER-SRV-BCK-05-1,SRV-BCK-05,Backups are encrypted in transit and at rest and media is handled securely,1,Backup job encryption settings
+ER-SRV-BCK-05-2,SRV-BCK-05,Backups are encrypted in transit and at rest and media is handled securely,2,key management records
+ER-SRV-BCK-05-3,SRV-BCK-05,Backups are encrypted in transit and at rest and media is handled securely,3,transport protocol configuration
+ER-SRV-BCK-05-4,SRV-BCK-05,Backups are encrypted in transit and at rest and media is handled securely,4,media handling standard
+ER-SRV-BCK-05-5,SRV-BCK-05,Backups are encrypted in transit and at rest and media is handled securely,5,courier and vault logs
+ER-SRV-BCK-06-1,SRV-BCK-06,Backup infrastructure and credentials are segregated from production administration,1,Backup server domain status
+ER-SRV-BCK-06-2,SRV-BCK-06,Backup infrastructure and credentials are segregated from production administration,2,admin role assignments
+ER-SRV-BCK-06-3,SRV-BCK-06,Backup infrastructure and credentials are segregated from production administration,3,MFA configuration
+ER-SRV-BCK-06-4,SRV-BCK-06,Backup infrastructure and credentials are segregated from production administration,4,firewall rules
+ER-SRV-BCK-06-5,SRV-BCK-06,Backup infrastructure and credentials are segregated from production administration,5,backup console audit logs
+ER-SRV-DAT-01-1,SRV-DAT-01,Sensitive data on servers is encrypted at rest,1,BitLocker or LUKS status
+ER-SRV-DAT-01-2,SRV-DAT-01,Sensitive data on servers is encrypted at rest,2,"key escrow records (AD, Entra, KMS)"
+ER-SRV-DAT-01-3,SRV-DAT-01,Sensitive data on servers is encrypted at rest,3,database TDE settings
+ER-SRV-DAT-01-4,SRV-DAT-01,Sensitive data on servers is encrypted at rest,4,virtual disk encryption
+ER-SRV-DAT-02-1,SRV-DAT-02,"Server services use current TLS versions, strong ciphers and managed certificates",1,TLS scan results
+ER-SRV-DAT-02-2,SRV-DAT-02,"Server services use current TLS versions, strong ciphers and managed certificates",2,certificate inventory with expiry dates
+ER-SRV-DAT-02-3,SRV-DAT-02,"Server services use current TLS versions, strong ciphers and managed certificates",3,SChannel or OpenSSL configuration
+ER-SRV-DAT-02-4,SRV-DAT-02,"Server services use current TLS versions, strong ciphers and managed certificates",4,cryptographic standard
+ER-SRV-DAT-03-1,SRV-DAT-03,File systems enforce access control and permissions on sensitive data,1,File system listing
+ER-SRV-DAT-03-2,SRV-DAT-03,File systems enforce access control and permissions on sensitive data,2,permission baselines
+ER-SRV-DAT-03-3,SRV-DAT-03,File systems enforce access control and permissions on sensitive data,3,ACL exports for sensitive paths
+ER-SRV-GOV-01-1,SRV-GOV-01,Every server is registered in an authoritative inventory reconciled with discovery,1,CMDB export
+ER-SRV-GOV-01-2,SRV-GOV-01,Every server is registered in an authoritative inventory reconciled with discovery,2,network discovery results
+ER-SRV-GOV-01-3,SRV-GOV-01,Every server is registered in an authoritative inventory reconciled with discovery,3,reconciliation report
+ER-SRV-GOV-01-4,SRV-GOV-01,Every server is registered in an authoritative inventory reconciled with discovery,4,registration procedure
+ER-SRV-GOV-02-1,SRV-GOV-02,"Every server has accountable owners, a criticality rating and a data classification",1,Owner and administrator register
+ER-SRV-GOV-02-2,SRV-GOV-02,"Every server has accountable owners, a criticality rating and a data classification",2,management approval
+ER-SRV-GOV-02-3,SRV-GOV-02,"Every server has accountable owners, a criticality rating and a data classification",3,criticality and classification ratings
+ER-SRV-GOV-02-4,SRV-GOV-02,"Every server has accountable owners, a criticality rating and a data classification",4,RACI
+ER-SRV-GOV-02-5,SRV-GOV-02,"Every server has accountable owners, a criticality rating and a data classification",5,list of applications with administrators
+ER-SRV-GOV-03-1,SRV-GOV-03,A security review and risk assessment is completed before production and on significant change,1,Risk assessment reports
+ER-SRV-GOV-03-2,SRV-GOV-03,A security review and risk assessment is completed before production and on significant change,2,reviewer qualification
+ER-SRV-GOV-03-3,SRV-GOV-03,A security review and risk assessment is completed before production and on significant change,3,risk acceptance forms
+ER-SRV-GOV-03-4,SRV-GOV-03,A security review and risk assessment is completed before production and on significant change,4,review schedule
+ER-SRV-GOV-04-1,SRV-GOV-04,Third-party system administration and hosting are governed through contracts and access controls,1,Contracts and security schedules
+ER-SRV-GOV-04-2,SRV-GOV-04,Third-party system administration and hosting are governed through contracts and access controls,2,vendor risk assessments
+ER-SRV-GOV-04-3,SRV-GOV-04,Third-party system administration and hosting are governed through contracts and access controls,3,third-party access list
+ER-SRV-GOV-04-4,SRV-GOV-04,Third-party system administration and hosting are governed through contracts and access controls,4,SOC 2 or ISO reports
+ER-SRV-GOV-04-5,SRV-GOV-04,Third-party system administration and hosting are governed through contracts and access controls,5,vendor remote-access logs
+ER-SRV-VIR-01-1,SRV-VIR-01,Virtualization management planes are isolated and hardened,1,Management network design
+ER-SRV-VIR-01-2,SRV-VIR-01,Virtualization management planes are isolated and hardened,2,firewall rules
+ER-SRV-VIR-01-3,SRV-VIR-01,Virtualization management planes are isolated and hardened,3,external scan result
+ER-SRV-VIR-01-4,SRV-VIR-01,Virtualization management planes are isolated and hardened,4,certificate inventory
+ER-SRV-VIR-01-5,SRV-VIR-01,Virtualization management planes are isolated and hardened,5,access lists
+ER-SRV-VIR-02-1,SRV-VIR-02,"Hypervisor administrative access uses central identity, MFA and least privilege",1,vCenter SSO and identity source configuration
+ER-SRV-VIR-02-2,SRV-VIR-02,"Hypervisor administrative access uses central identity, MFA and least privilege",2,role and permission export
+ER-SRV-VIR-02-3,SRV-VIR-02,"Hypervisor administrative access uses central identity, MFA and least privilege",3,host lockdown settings
+ER-SRV-VIR-02-4,SRV-VIR-02,"Hypervisor administrative access uses central identity, MFA and least privilege",4,Proxmox realm and permission settings
+ER-SRV-VIR-02-5,SRV-VIR-02,"Hypervisor administrative access uses central identity, MFA and least privilege",5,Hyper-V administrators group membership
+ER-SRV-VIR-03-1,SRV-VIR-03,Virtual machines are built from hardened templates with controlled snapshots and devices,1,VM template hardening standard
+ER-SRV-VIR-03-2,SRV-VIR-03,Virtual machines are built from hardened templates with controlled snapshots and devices,2,snapshot inventory
+ER-SRV-VIR-03-3,SRV-VIR-03,Virtual machines are built from hardened templates with controlled snapshots and devices,3,VM hardware configuration
+ER-SRV-VIR-03-4,SRV-VIR-03,Virtual machines are built from hardened templates with controlled snapshots and devices,4,guest tools versions
+ER-SRV-VIR-04-1,SRV-VIR-04,Virtual networks and storage access are segmented and restricted,1,Virtual network diagram
+ER-SRV-VIR-04-2,SRV-VIR-04,Virtual networks and storage access are segmented and restricted,2,vSwitch security policy
+ER-SRV-VIR-04-3,SRV-VIR-04,Virtual networks and storage access are segmented and restricted,3,storage ACLs and LUN masking
+ER-SRV-VIR-04-4,SRV-VIR-04,Virtual networks and storage access are segmented and restricted,4,NFS export lists
+ER-SRV-VIR-04-5,SRV-VIR-04,Virtual networks and storage access are segmented and restricted,5,"virtual firewall rules (NSX, Hyper-V extended ACLs, Proxmox SDN)"
+ER-SRV-VIR-05-1,SRV-VIR-05,Hypervisor logging and ransomware resilience controls are in place,1,Syslog configuration
+ER-SRV-VIR-05-2,SRV-VIR-05,Hypervisor logging and ransomware resilience controls are in place,2,SIEM source health
+ER-SRV-VIR-05-3,SRV-VIR-05,Hypervisor logging and ransomware resilience controls are in place,3,ESXi service status
+ER-SRV-VIR-05-4,SRV-VIR-05,Hypervisor logging and ransomware resilience controls are in place,4,configuration backups
+ER-SRV-VIR-05-5,SRV-VIR-05,Hypervisor logging and ransomware resilience controls are in place,5,vendor hardening guide compliance

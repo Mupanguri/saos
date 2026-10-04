@@ -1,0 +1,13 @@
+﻿{
+  "name": "saos-source-library",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SAOS build tooling. build_report.js requires the docx package; build_workbook.py is Python and needs no Node dependency.",
+  "scripts": {
+    "report": "node build/build_report.js",
+    "workbook": "python build/build_workbook.py"
+  },
+  "dependencies": {
+    "docx": "^9.5.1"
+  }
+}
